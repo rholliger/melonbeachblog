@@ -4,6 +4,6 @@
 	"sources": [
 		"../../app_server/styles/style.sass"
 	],
-	"mappings": "AAAA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,IAAK,GAAG",
+	"mappings": "AAAA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,KAAM,GAAG",
 	"names": []
 }
