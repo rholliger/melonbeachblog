@@ -2,7 +2,7 @@
 	"version": 3,
 	"file": "style.css",
 	"sources": [
-		"style.sass"
+		"../../app_server/styles/style.sass"
 	],
 	"mappings": "AAAA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,IAAK,GAAG",
 	"names": []
