@@ -1,5 +1,12 @@
 exports.showArticles = function(req, res) {
-  res.render('index', { title: 'MelonBeach Blog' });
+  res.render('index', {
+    title: 'MelonBeach Blog',
+    articles: [{
+      title: 'First title'
+    }, {
+      title: 'Second title'
+    }]
+  });
 };
 
 exports.showCategory = function(req, res) {
@@ -9,7 +16,12 @@ exports.showCategory = function(req, res) {
 
 exports.showArticle = function(req, res) {
   console.log('category -> ' + req.params.categoryName + ' articleSlug -> ' + req.params.articleSlug);
-  res.render('index', { title: 'MelonBeach Blog Article' });
+  res.render('article', {
+    title: 'MelonBeach Blog Article',
+    article: {
+      title: 'This is my article'
+    }
+  });
 };
 
 exports.showAbout = function(req, res) {
