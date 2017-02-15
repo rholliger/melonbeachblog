@@ -1,4 +1,128 @@
+@font-face {
+  font-family: 'Oswald-Regular';
+  font-weight: normal;
+  font-style: normal;
+  src: url("Oswald-Regular.eot");
+  src: url("Oswald-Regular.woff2") format("woff2") url("Oswald-Regular.woff") format("woff") url("Oswald-Regular.ttf") format("truetype") url("Oswald-Regular.svg#Oswald-Regular") format("svg") url("Oswald-Regular.eot?#iefix") format("embedded-opentype"); }
+
+@font-face {
+  font-family: 'Oswald-Light';
+  src: url("Oswald-Light.eot");
+  src: url("Oswald-Light.woff2") format("woff2") url("Oswald-Light.woff") format("woff") url("Oswald-Light.ttf") format("truetype") url("Oswald-Light.svg#Oswald-Light") format("svg") url("Oswald-Light.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Palanquin-Bold';
+  src: url("Palanquin-Bold.eot");
+  src: url("Palanquin-Bold.woff2") format("woff2") url("Palanquin-Bold.woff") format("woff") url("Palanquin-Bold.ttf") format("truetype") url("Palanquin-Bold.svg#Palanquin-Bold") format("svg") url("Palanquin-Bold.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Palanquin-SemiBold';
+  src: url("Palanquin-SemiBold.eot");
+  src: url("Palanquin-SemiBold.woff2") format("woff2") url("Palanquin-SemiBold.woff") format("woff") url("Palanquin-SemiBold.ttf") format("truetype") url("Palanquin-SemiBold.svg#Palanquin-SemiBold") format("svg") url("Palanquin-SemiBold.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Palanquin-Regular';
+  src: url("Palanquin-Regular.eot");
+  src: url("Palanquin-Regular.woff2") format("woff2") url("Palanquin-Regular.woff") format("woff") url("Palanquin-Regular.ttf") format("truetype") url("Palanquin-Regular.svg#Palanquin-Regular") format("svg") url("Palanquin-Regular.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Palanquin-Light';
+  src: url("Palanquin-Light.eot");
+  src: url("Palanquin-Light.woff2") format("woff2") url("Palanquin-Light.woff") format("woff") url("Palanquin-Light.ttf") format("truetype") url("Palanquin-Light.svg#Palanquin-Light") format("svg") url("Palanquin-Light.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url("Montserrat-Regular.eot");
+  src: url("Montserrat-Regular.woff2") format("woff2") url("Montserrat-Regular.woff") format("woff") url("Montserrat-Regular.ttf") format("truetype") url("Montserrat-Regular.svg#Montserrat-Regular") format("svg") url("Montserrat-Regular.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal; }
+
 body {
-  background-color: white; }
+  background-color: #F0F0F0; }
+  body h1, body h2, body small {
+    margin: 0; }
+  body a {
+    color: #BACB63; }
+    body a:hover {
+      color: #F8B235;
+      text-decoration: none; }
+    body a:visited, body a:focus {
+      color: #BACB63;
+      text-decoration: none; }
+  body button {
+    font-family: 'Oswald-Light';
+    text-transform: uppercase;
+    font-size: 16px;
+    background-color: white;
+    border: 2px solid #BACB63;
+    padding: 8px 12px;
+    color: #BACB63; }
+    body button:hover {
+      background-color: #BACB63;
+      color: white; }
+  body .container #logo-container {
+    margin-bottom: 60px; }
+    body .container #logo-container #logo {
+      background-image: url("../images/logo@2x.png");
+      background-size: 300px 92px;
+      margin-top: 60px;
+      margin-bottom: 20px;
+      width: 300px;
+      height: 92px; }
+    body .container #logo-container h1 {
+      text-align: center;
+      font-family: 'Montserrat-Regular';
+      font-weight: normal;
+      font-size: 26px; }
+      body .container #logo-container h1 .green {
+        color: #BACB63; }
+      body .container #logo-container h1 .orange {
+        color: #F8B235; }
+      body .container #logo-container h1 .blue {
+        color: #3DA8DB; }
+  body #articles-container {
+    max-width: 630px; }
+    body #articles-container article {
+      margin-bottom: 80px; }
+      body #articles-container article .image-container {
+        border-bottom: 6px solid #BACB63; }
+      body #articles-container article .text-container {
+        background-color: white;
+        padding: 0 30px 30px; }
+        body #articles-container article .text-container .title-container {
+          text-align: center; }
+          body #articles-container article .text-container .title-container h1, body #articles-container article .text-container .title-container h2, body #articles-container article .text-container .title-container h3 {
+            font-family: 'Oswald-Regular';
+            font-weight: normal;
+            text-transform: uppercase; }
+          body #articles-container article .text-container .title-container h2, body #articles-container article .text-container .title-container h3 {
+            font-family: 'Oswald-Light';
+            font-weight: normal;
+            color: #BDBDBD; }
+          body #articles-container article .text-container .title-container h1 {
+            padding-top: 2px;
+            color: #BACB63;
+            letter-spacing: 0.5px; }
+          body #articles-container article .text-container .title-container h2 {
+            padding-top: 30px;
+            font-size: 16px; }
+          body #articles-container article .text-container .title-container h3 {
+            padding-top: 14px;
+            font-size: 12px; }
+        body #articles-container article .text-container p {
+          font-family: 'Palanquin-Light';
+          font-weight: normal;
+          font-size: 16px;
+          color: #A1A1A1; }
 
 /*# sourceMappingURL=style.css.map */

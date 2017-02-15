@@ -1,6 +1,28 @@
 extends layout
 
 block content
-  .container
-    h1= title
-    p This blog is under construction, check back later please :-)
+  #articles-container.center-block
+    article
+      .image-container
+        a(href='#')
+          img.img-responsive(src='http://placehold.it/630x343')
+      .text-container
+        .title-container
+          h2 12. Februar 2017
+          h1 
+            a(href='#') Das ist ein Titel
+          h3 By Roy Holliger
+        hr
+        p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.
+        button Weiterlesen...
+    article
+      .image-container
+        img.img-responsive(src='http://placehold.it/630x343')
+      .text-container
+        .title-container
+          h2 12. Februar 2017
+          h1 Das ist ein Titel
+          h3 By Roy Holliger
+        hr
+        p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.
+        button Weiterlesen...
