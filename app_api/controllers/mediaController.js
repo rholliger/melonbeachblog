@@ -1,24 +1,24 @@
-var utils = require('../utils');
+var utils = require('../libs/utils');
 
-exports.getMediaFiles = function(req, res) {
+module.exports.getMediaFiles = function(req, res) {
   utils.sendJSONResponse(res, 200, {
     media: []
   });
 };
 
-exports.getMediaFile = function(req, res) {
+module.exports.getMediaFile = function(req, res) {
   utils.sendJSONResponse(res, 200, {
     media: {}
   });
 };
 
-exports.uploadMediaFile = function(req, res) {
+module.exports.uploadMediaFile = function(req, res) {
   utils.sendJSONResponse(res, 200, {
     media: {}
   });
 };
 
-exports.deleteMediaFile = function(req, res) {
+module.exports.deleteMediaFile = function(req, res) {
   utils.sendJSONResponse(res, 200, {
     message: 'Deleted media'
   });

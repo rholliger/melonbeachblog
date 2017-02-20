@@ -1,30 +1,30 @@
-var utils = require('../utils');
+var utils = require('../libs/utils');
 
-exports.getUsers = function(req, res) {
+module.exports.getUsers = function(req, res) {
   utils.sendJSONResponse(res, 200, {
     users: []
   });
 };
 
-exports.getUser = function(req, res) {
+module.exports.getUser = function(req, res) {
   utils.sendJSONResponse(res, 200, {
     user: {}
   });
 };
 
-exports.createUser = function(req, res) {
+module.exports.createUser = function(req, res) {
   utils.sendJSONResponse(res, 200, {
     user: {}
   });
 };
 
-exports.updateUser = function(req, res) {
+module.exports.updateUser = function(req, res) {
   utils.sendJSONResponse(res, 200, {
     user: {}
   });
 };
 
-exports.deleteUser = function(req, res) {
+module.exports.deleteUser = function(req, res) {
   utils.sendJSONResponse(res, 200, {
     message: 'Deleted user'
   });

@@ -1,4 +1,4 @@
-exports.showArticles = function(req, res) {
+module.exports.showArticles = function(req, res) {
   res.render('index', {
     title: 'MelonBeach Blog',
     articles: [{
@@ -9,12 +9,12 @@ exports.showArticles = function(req, res) {
   });
 };
 
-exports.showCategory = function(req, res) {
+module.exports.showCategory = function(req, res) {
   console.log('category', req.params.categoryName);
   res.render('index', { title: 'MelonBeach Blog Category' });
 };
 
-exports.showArticle = function(req, res) {
+module.exports.showArticle = function(req, res) {
   console.log('category -> ' + req.params.categoryName + ' articleSlug -> ' + req.params.articleSlug);
   res.render('article', {
     title: 'MelonBeach Blog Article',
@@ -24,6 +24,6 @@ exports.showArticle = function(req, res) {
   });
 };
 
-exports.showAbout = function(req, res) {
+module.exports.showAbout = function(req, res) {
   res.render('index', { title: 'MelonBeach Blog About' });
 };
