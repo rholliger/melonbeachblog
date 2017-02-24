@@ -36,10 +36,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // API Routes
 app.use('/api', apiRoutes);
-// Front-End (Blog) Routes
-app.use('/', frontendRoutes);
 // Admin (Backend) Routes
 app.use('/admin', backendRoutes);
+// Front-End (Blog) Routes
+app.use('/', frontendRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

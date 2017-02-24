@@ -81,7 +81,6 @@ module.exports.updateArticle = function(req, res) {
 module.exports.deleteArticle = function(req, res) {
   if (req.params && req.params.articleId) {
     Article.findByIdAndRemove(req.params.articleId, function(err, article) {
-      console.log(article);
       if (err) {
         utils.sendJSONResponse(res, 400, {
           'message': err

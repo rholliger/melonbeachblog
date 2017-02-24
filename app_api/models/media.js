@@ -2,7 +2,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var mediaSchema = new Schema({
-  name: {
+  fileName: {
+    type: String,
+    required: true
+  },
+  mimeType: {
     type: String,
     required: true
   },
@@ -16,4 +20,4 @@ var mediaSchema = new Schema({
 
 // TODO: Better syntax?
 module.exports.mediaSchema = mediaSchema;
-module.exports.model = mongoose.model('Media', mediaSchema);
+module.exports.Model = mongoose.model('Media', mediaSchema);
