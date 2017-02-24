@@ -16,12 +16,15 @@ var articleSchema = new Schema({
   slug: String,
   createdDate: {
     type: Date,
-    "default": Date.now
+    'default': Date.now
   },
   publishDate: Date,
   author: String,
   category: String,
-  content: String,
+  content: {
+    type: String,
+    required: true
+  },
   mediaElement: mediaElementSchema
 });
 
