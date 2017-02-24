@@ -1,7 +1,28 @@
 var utils = require('../libs/utils');
 var Article = require('../models/articles');
 
+function getArticleFromSlug(slug, res) {
+  Article.findOne({ slug: slug }, function(err, article) {
+    if (err) {
+      utils.sendJSONResponse(res, 400, {
+        'message': err
+      });
+    } else if (!article) {
+      utils.sendJSONResponse(res, 404, {
+          'message': 'No corresponding article found with this slug'
+        });
+    } else {
+      utils.sendJSONResponse(res, 200, article);
+    }
+  });
+}
+
 module.exports.getArticles = function(req, res) {
+  if (req.query && req.query.slug) {
+    getArticleFromSlug(req.query.slug, res);
+    return;
+  }
+
   Article.find({}, function(err, articles) {
     if (err) {
       utils.sendJSONResponse(res, 400, {
@@ -35,10 +56,19 @@ module.exports.getArticle = function(req, res) {
   }
 };
 
+function createSlugFromTitle(title) {
+  return title.toString().toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '');
+}
+
 module.exports.createArticle = function(req, res) {
   Article.create({
     title: req.body.title,
-    slug: req.body.slug,
+    slug: req.body.slug ? req.body.slug : createSlugFromTitle(req.body.title),
     author: req.body.author,
     category: req.body.category,
     content: req.body.content

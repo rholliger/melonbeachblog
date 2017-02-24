@@ -59,7 +59,7 @@ body {
     body a:visited, body a:focus {
       color: #BACB63;
       text-decoration: none; }
-  body button {
+  body .button {
     font-family: 'Oswald-Light';
     text-transform: uppercase;
     font-size: 16px;
@@ -67,23 +67,23 @@ body {
     border: 2px solid #BACB63;
     padding: 8px 12px;
     color: #BACB63; }
-    body button:hover {
+    body .button:hover {
       background-color: #BACB63;
       color: white; }
   body .container #logo-container {
-    margin-bottom: 60px; }
+    width: 300px;
+    margin: 40px auto; }
     body .container #logo-container #logo {
       background-image: url("../images/logo@2x.png");
       background-size: 300px 92px;
-      margin-top: 60px;
-      margin-bottom: 20px;
-      width: 300px;
+      width: 100%;
       height: 92px; }
     body .container #logo-container h1 {
       text-align: center;
       font-family: 'Montserrat-Regular';
       font-weight: normal;
-      font-size: 26px; }
+      font-size: 26px;
+      margin-top: 20px; }
       body .container #logo-container h1 .green {
         color: #BACB63; }
       body .container #logo-container h1 .orange {
@@ -124,5 +124,7 @@ body {
           font-weight: normal;
           font-size: 16px;
           color: #A1A1A1; }
+        body #articles-container article .text-container .button {
+          display: inline-block; }
 
 /*# sourceMappingURL=style.css.map */

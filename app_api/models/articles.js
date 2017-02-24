@@ -13,14 +13,21 @@ var articleSchema = new Schema({
     type: String,
     required: true
   },
-  slug: String,
+  slug: {
+    type: String,
+    required: true,
+    unique: true
+  },
   createdDate: {
     type: Date,
     'default': Date.now
   },
   publishDate: Date,
   author: String,
-  category: String,
+  category: {
+    type: String,
+    'default': 'news'
+  },
   content: {
     type: String,
     required: true

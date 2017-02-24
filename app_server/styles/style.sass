@@ -18,7 +18,7 @@ body
       color: $green
       text-decoration: none
 
-  button
+  .button
     font-family: 'Oswald-Light'
     text-transform: uppercase
     font-size: 16px
@@ -33,14 +33,13 @@ body
 
   .container
     #logo-container
-      margin-bottom: 60px
+      width: 300px
+      margin: 40px auto
 
       #logo
         background-image: url('../images/logo@2x.png')
         background-size: 300px 92px
-        margin-top: 60px
-        margin-bottom: 20px
-        width: 300px
+        width: 100%
         height: 92px
 
       h1
@@ -48,6 +47,7 @@ body
         font-family: 'Montserrat-Regular'
         font-weight: normal
         font-size: 26px
+        margin-top: 20px
 
         .green
           color: $green
@@ -102,3 +102,6 @@ body
           font-weight: normal
           font-size: 16px
           color: $darkerGrey
+
+        .button
+          display: inline-block

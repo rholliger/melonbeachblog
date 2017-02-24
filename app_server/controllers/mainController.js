@@ -1,11 +1,29 @@
+var request = require('request');
+
+var apiOptions = {
+  serverUrl: 'http://localhost:3000'
+};
+
+function createContentExcerpt(content) {
+  return content.substr(0, 600) + '...';
+}
+
 module.exports.showArticles = function(req, res) {
-  res.render('index', {
-    title: 'MelonBeach Blog',
-    articles: [{
-      title: 'First title'
-    }, {
-      title: 'Second title'
-    }]
+  request({
+    url: apiOptions.serverUrl + '/api/articles',
+    method: 'GET',
+    json: {}
+  }, function(error, response, body) {
+    for (data of body) {
+      if (data.content.length > 600) {
+        data.content = createContentExcerpt(data.content);
+      }
+    }
+
+    res.render('index', {
+      title: 'MelonBeach Blog',
+      articles: body
+    });
   });
 };
 
@@ -16,11 +34,18 @@ module.exports.showCategory = function(req, res) {
 
 module.exports.showArticle = function(req, res) {
   console.log('category -> ' + req.params.categoryName + ' articleSlug -> ' + req.params.articleSlug);
-  res.render('article', {
-    title: 'MelonBeach Blog Article',
-    article: {
-      title: 'This is my article'
-    }
+  console.log(req.params.articleSlug);
+
+  request({
+    url: apiOptions.serverUrl + '/api/articles?slug=' + req.params.articleSlug,
+    method: 'GET',
+    json: {}
+  }, function(error, response, body) {
+    console.log(body);
+    res.render('article', {
+      title: 'MelonBeach Blog Article',
+      article: body
+    });
   });
 };
 
