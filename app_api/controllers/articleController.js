@@ -17,9 +17,30 @@ function getArticleFromSlug(slug, res) {
   });
 }
 
+function getArticlesFromCategory(category, res) {
+  Article.find({ category: category }, function(err, article) {
+    if (err) {
+      utils.sendJSONResponse(res, 400, {
+        'message': err
+      });
+    } else if (!article) {
+      utils.sendJSONResponse(res, 404, {
+          'message': 'No corresponding articles found with this category'
+        });
+    } else {
+      utils.sendJSONResponse(res, 200, article);
+    }
+  });
+}
+
 module.exports.getArticles = function(req, res) {
   if (req.query && req.query.slug) {
     getArticleFromSlug(req.query.slug, res);
+    return;
+  }
+
+  if (req.query && req.query.category) {
+    getArticlesFromCategory(req.query.category, res);
     return;
   }
 
