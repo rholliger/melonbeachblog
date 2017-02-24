@@ -8,13 +8,14 @@ mixin article(article, isFullArticle)
           img.img-responsive(src='http://placehold.it/630x343')
     .text-container
       .title-container
-        h2= article.title
+        h2= article.createdDate
         if isFullArticle
           h1= article.title
         else
           h1 
             a(href=article.category + '/' +article.slug)= article.title
-        h3 By #{article.author}
+        h3 Written By #{article.author} in 
+          a(href=article.category)= article.category
       hr
       if isFullArticle
         p= article.content

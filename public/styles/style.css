@@ -49,7 +49,7 @@
 
 body {
   background-color: #F0F0F0; }
-  body h1, body h2, body small {
+  body h1, body h2, body h3, body h4, body small {
     margin: 0; }
   body a {
     color: #BACB63; }
@@ -101,11 +101,11 @@ body {
         padding: 0 30px 30px; }
         body #articles-container article .text-container .title-container {
           text-align: center; }
-          body #articles-container article .text-container .title-container h1, body #articles-container article .text-container .title-container h2, body #articles-container article .text-container .title-container h3 {
+          body #articles-container article .text-container .title-container h1, body #articles-container article .text-container .title-container h2, body #articles-container article .text-container .title-container h3, body #articles-container article .text-container .title-container h4 {
             font-family: 'Oswald-Regular';
             font-weight: normal;
             text-transform: uppercase; }
-          body #articles-container article .text-container .title-container h2, body #articles-container article .text-container .title-container h3 {
+          body #articles-container article .text-container .title-container h2, body #articles-container article .text-container .title-container h3, body #articles-container article .text-container .title-container h4 {
             font-family: 'Oswald-Light';
             font-weight: normal;
             color: #BDBDBD; }
@@ -114,7 +114,7 @@ body {
             color: #BACB63;
             letter-spacing: 0.5px; }
           body #articles-container article .text-container .title-container h2 {
-            padding-top: 30px;
+            padding-top: 16px;
             font-size: 16px; }
           body #articles-container article .text-container .title-container h3 {
             padding-top: 14px;
