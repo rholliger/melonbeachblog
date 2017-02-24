@@ -1,59 +1,54 @@
 var request = require('request');
+var utils = require('../libs/utils');
 
 var apiOptions = {
-  serverUrl: 'http://localhost:3000'
+  serverUrl: 'http://localhost:3000/api'
 };
 
 function createContentExcerpt(content) {
   return content.substr(0, 600) + '...';
 }
 
-module.exports.showArticles = function(req, res) {
+function requestArticles(path, callback) {
   request({
-    url: apiOptions.serverUrl + '/api/articles',
+    url: apiOptions.serverUrl + path,
     method: 'GET',
     json: {}
-  }, function(error, response, body) {
-    for (data of body) {
-      if (data.content.length > 600) {
-        data.content = createContentExcerpt(data.content);
+  }, function(err, response, body) {
+    if (Array.isArray(body)) {
+      for (data of body) {
+        if (data.content.length > 600) {
+          data.content = createContentExcerpt(data.content);
+        }
       }
     }
 
-    res.render('index', {
-      title: 'MelonBeach Blog',
-      articles: body
-    });
+    callback(body, err);
+  });
+}
+
+module.exports.showArticles = function(req, res) {
+  requestArticles('/articles', function(body, err) {
+      res.render('index', {
+        title: 'MelonBeach Blog Home',
+        articles: body
+      });    
   });
 };
 
 module.exports.showCategory = function(req, res) {
-  request({
-    url: apiOptions.serverUrl + '/api/articles?category=' + req.params.categoryName,
-    method: 'GET',
-    json: {}
-  }, function(error, response, body) {
-    for (data of body) {
-      if (data.content.length > 600) {
-        data.content = createContentExcerpt(data.content);
-      }
-    }
-
+  requestArticles('/articles?category=' + req.params.categoryName, function(body, err) {
     res.render('index', {
-      title: 'MelonBeach Blog Article' + req.params.categoryName,
+      title: 'MelonBeach Blog / ' + utils.capitalize(req.params.categoryName),
       articles: body
     });
   });
 };
 
 module.exports.showArticle = function(req, res) {
-  request({
-    url: apiOptions.serverUrl + '/api/articles?slug=' + req.params.articleSlug,
-    method: 'GET',
-    json: {}
-  }, function(error, response, body) {
+  requestArticles('/articles/?slug=' + req.params.articleSlug, function(body, err) {
     res.render('article', {
-      title: 'MelonBeach Blog Article',
+      title: body.title,
       article: body
     });
   });

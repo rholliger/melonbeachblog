@@ -80,6 +80,9 @@ module.exports.getArticle = function(req, res) {
 function createSlugFromTitle(title) {
   return title.toString().toLowerCase()
     .replace(/\s+/g, '-')
+    .replace(/ä/, 'ae')
+    .replace(/ö/, 'oe')
+    .replace(/ü/, 'ue')
     .replace(/[^\w\-]+/g, '')
     .replace(/\-\-+/g, '-')
     .replace(/^-+/, '')
