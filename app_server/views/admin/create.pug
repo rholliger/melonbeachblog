@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  #admin.center-block
+    .creation
+      h1 Create Article
+      form.createForm(name='createForm')
+        label(for='title') Titel
+        input#title(type='text' name='title' placeholder='Titel eingeben')
+        label(for='slug') Slug
+        input(type='text' name='slug' placeholder='Slug eingeben')
+        label(for='category') Kategorie
+        select(name='category')
+          option(value='news') News
+          option(value='technology') Technology
+          option(value='gaming') Gaming
+        label(for='content') Artikeltext
+        textarea(cols='50' rows='15' name='content' placeholder='Hier kommt der Artikeltext')
+        input(type='submit' value='Create')

@@ -90,41 +90,54 @@ body {
         color: #F8B235; }
       body .container #logo-container h1 .blue {
         color: #3DA8DB; }
-  body #articles-container {
+  body .center-block {
     max-width: 630px; }
-    body #articles-container article {
-      margin-bottom: 80px; }
-      body #articles-container article .image-container {
-        border-bottom: 6px solid #BACB63; }
-      body #articles-container article .text-container {
-        background-color: white;
-        padding: 0 30px 30px; }
-        body #articles-container article .text-container .title-container {
-          text-align: center; }
-          body #articles-container article .text-container .title-container h1, body #articles-container article .text-container .title-container h2, body #articles-container article .text-container .title-container h3, body #articles-container article .text-container .title-container h4 {
-            font-family: 'Oswald-Regular';
-            font-weight: normal;
-            text-transform: uppercase; }
-          body #articles-container article .text-container .title-container h2, body #articles-container article .text-container .title-container h3, body #articles-container article .text-container .title-container h4 {
-            font-family: 'Oswald-Light';
-            font-weight: normal;
-            color: #BDBDBD; }
-          body #articles-container article .text-container .title-container h1 {
-            padding-top: 2px;
-            color: #BACB63;
-            letter-spacing: 0.5px; }
-          body #articles-container article .text-container .title-container h2 {
-            padding-top: 16px;
-            font-size: 16px; }
-          body #articles-container article .text-container .title-container h3 {
-            padding-top: 14px;
-            font-size: 12px; }
-        body #articles-container article .text-container p {
-          font-family: 'Palanquin-Light';
+  body #articles-container article {
+    margin-bottom: 80px; }
+    body #articles-container article .image-container {
+      border-bottom: 6px solid #BACB63; }
+    body #articles-container article .text-container {
+      background-color: white;
+      padding: 0 30px 30px; }
+      body #articles-container article .text-container .title-container {
+        text-align: center; }
+        body #articles-container article .text-container .title-container h1, body #articles-container article .text-container .title-container h2, body #articles-container article .text-container .title-container h3, body #articles-container article .text-container .title-container h4 {
+          font-family: 'Oswald-Regular';
           font-weight: normal;
-          font-size: 16px;
-          color: #A1A1A1; }
-        body #articles-container article .text-container .button {
-          display: inline-block; }
+          text-transform: uppercase; }
+        body #articles-container article .text-container .title-container h2, body #articles-container article .text-container .title-container h3, body #articles-container article .text-container .title-container h4 {
+          font-family: 'Oswald-Light';
+          font-weight: normal;
+          color: #BDBDBD; }
+        body #articles-container article .text-container .title-container h1 {
+          padding-top: 2px;
+          color: #BACB63;
+          letter-spacing: 0.5px; }
+        body #articles-container article .text-container .title-container h2 {
+          padding-top: 16px;
+          font-size: 16px; }
+        body #articles-container article .text-container .title-container h3 {
+          padding-top: 14px;
+          font-size: 12px; }
+      body #articles-container article .text-container p {
+        font-family: 'Palanquin-Light';
+        font-weight: normal;
+        font-size: 16px;
+        color: #A1A1A1; }
+      body #articles-container article .text-container .button {
+        display: inline-block; }
+  body #admin .creation form label {
+    margin-top: 20px;
+    display: inline-block; }
+  body #admin .creation form input, body #admin .creation form select, body #admin .creation form textarea {
+    margin: 5px 0 5px 0; }
+  body #admin .creation form input, body #admin .creation form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc; }
+  body #admin .creation form select {
+    display: block; }
+  body #admin .creation form input[type='submit'] {
+    margin: 20px 0; }
 
 /*# sourceMappingURL=style.css.map */

@@ -103,7 +103,9 @@ module.exports.createArticle = function(req, res) {
       });
     } else {
       // TODO: Location header? / Does the created article need to be returned in the body?
-      utils.sendJSONResponse(res, 201, article);
+      // res.location = '/articles';
+      res.setHeader('Location', '/articles');
+      utils.sendJSONResponse(res, 201, null);
     }
   });
 };

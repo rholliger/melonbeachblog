@@ -23,4 +23,8 @@ router.get('/media/delete/:mediaId', mediaController.deleteMedia);
 // Settings
 router.get('/settings', settingsController.showSettings);
 
+// // TODO: Not found
+// router.get('*', function(req, res) {
+// })
+
 module.exports = router;

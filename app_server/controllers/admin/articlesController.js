@@ -5,7 +5,7 @@ module.exports.showArticleList = function(req, res) {
 
 // Show the article creation view
 module.exports.showArticleCreation = function(req, res) {
-  res.render('admin/index', { title: 'MelonBeach Blog Article Creation' }); 
+  res.render('admin/create', { title: 'MelonBeach Blog Article Creation' }); 
 };
 
 // Show the article edit view
