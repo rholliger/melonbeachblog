@@ -4,6 +4,7 @@ var router = express.Router();
 var articleController = require('../controllers/articleController');
 var mediaController = require('../controllers/mediaController');
 var usersController = require('../controllers/usersController');
+var categoryController = require('../controllers/categoryController');
 
 /* ==== Articles ==== */
 
@@ -21,6 +22,22 @@ router.put('/articles/:articleId', articleController.updateArticle);
 
 // Delete an article via article ID
 router.delete('/articles/:articleId', articleController.deleteArticle);
+
+/* ======== */
+
+/* ==== Categories ==== */
+
+// Get all categories
+router.get('/categories', categoryController.getCategories);
+
+// Create a new category
+router.post('/categories', categoryController.createCategory);
+
+// TODO: Do we need to change a category? (It only has a name)
+// router.put...
+
+// Delete a category via category ID
+router.delete('/categories/:categoryId', categoryController.deleteCategory);
 
 /* ======== */
 

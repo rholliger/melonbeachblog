@@ -24,10 +24,12 @@ var articleSchema = new Schema({
   },
   publishDate: Date,
   author: String,
-  category: {
-    type: String,
-    'default': 'news'
-  },
+  // Category should be a separate collection, so we can search through it or display it in the frontend apart from getting the whole article
+  // category: {
+  //   type: String,
+  //   'default': 'news'
+  // },
+  category: String,
   content: {
     type: String,
     required: true
