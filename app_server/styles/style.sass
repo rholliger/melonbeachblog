@@ -31,7 +31,7 @@ body
       background-color: $green
       color: white
 
-  .container
+  .wrapper
     #logo-container
       width: 300px
       margin: 40px auto
@@ -109,23 +109,60 @@ body
 
 
   #admin
-    .creation
-      form
-        label
-          margin-top: 20px
-          display: inline-block
+    &.container
+      max-width: 1000px
 
-        input, select, textarea
-          margin: 5px 0 5px 0
+    nav
+      padding-right: 0
 
-        input, textarea
-          width: 100%
-          padding: 8px
-          border: 1px solid #ccc
+      ul
+        list-style: none
+        list-style-type: none
+        margin: 0
+        padding: 0
 
-        select
-          display: block
+        li
+          a
+            display: block
+            padding: 10px 0
+            text-align: center
 
-        input[type='submit']
-          margin: 20px 0
+            &:hover
+              background-color: $green
+              color: white
+
+            &.active
+              background-color: $green
+              color: white
+
+            span
+              font-size: 42px
+
+    section
+      background-color: white
+      border: 3px solid $green
+    
+      .creation
+        // padding: 10px 20px
+
+        form
+          label
+            margin-top: 20px
+            display: inline-block
+
+          input, select, textarea
+            margin: 5px 0 5px 0
+
+          input, textarea
+            width: 100%
+            padding: 8px
+            border: 1px solid #f0f0f0
+            background-color: #fbfbfb
+            outline: 0
+
+          select
+            display: block
+
+          input[type='submit']
+            margin: 20px 0
 

@@ -70,25 +70,25 @@ body {
     body .button:hover {
       background-color: #BACB63;
       color: white; }
-  body .container #logo-container {
+  body .wrapper #logo-container {
     width: 300px;
     margin: 40px auto; }
-    body .container #logo-container #logo {
+    body .wrapper #logo-container #logo {
       background-image: url("../images/logo@2x.png");
       background-size: 300px 92px;
       width: 100%;
       height: 92px; }
-    body .container #logo-container h1 {
+    body .wrapper #logo-container h1 {
       text-align: center;
       font-family: 'Montserrat-Regular';
       font-weight: normal;
       font-size: 26px;
       margin-top: 20px; }
-      body .container #logo-container h1 .green {
+      body .wrapper #logo-container h1 .green {
         color: #BACB63; }
-      body .container #logo-container h1 .orange {
+      body .wrapper #logo-container h1 .orange {
         color: #F8B235; }
-      body .container #logo-container h1 .blue {
+      body .wrapper #logo-container h1 .blue {
         color: #3DA8DB; }
   body .center-block {
     max-width: 630px; }
@@ -126,18 +126,44 @@ body {
         color: #A1A1A1; }
       body #articles-container article .text-container .button {
         display: inline-block; }
-  body #admin .creation form label {
-    margin-top: 20px;
-    display: inline-block; }
-  body #admin .creation form input, body #admin .creation form select, body #admin .creation form textarea {
-    margin: 5px 0 5px 0; }
-  body #admin .creation form input, body #admin .creation form textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc; }
-  body #admin .creation form select {
-    display: block; }
-  body #admin .creation form input[type='submit'] {
-    margin: 20px 0; }
+  body #admin.container {
+    max-width: 1000px; }
+  body #admin nav {
+    padding-right: 0; }
+    body #admin nav ul {
+      list-style: none;
+      list-style-type: none;
+      margin: 0;
+      padding: 0; }
+      body #admin nav ul li a {
+        display: block;
+        padding: 10px 0;
+        text-align: center; }
+        body #admin nav ul li a:hover {
+          background-color: #BACB63;
+          color: white; }
+        body #admin nav ul li a.active {
+          background-color: #BACB63;
+          color: white; }
+        body #admin nav ul li a span {
+          font-size: 42px; }
+  body #admin section {
+    background-color: white;
+    border: 3px solid #BACB63; }
+    body #admin section .creation form label {
+      margin-top: 20px;
+      display: inline-block; }
+    body #admin section .creation form input, body #admin section .creation form select, body #admin section .creation form textarea {
+      margin: 5px 0 5px 0; }
+    body #admin section .creation form input, body #admin section .creation form textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #f0f0f0;
+      background-color: #fbfbfb;
+      outline: 0; }
+    body #admin section .creation form select {
+      display: block; }
+    body #admin section .creation form input[type='submit'] {
+      margin: 20px 0; }
 
 /*# sourceMappingURL=style.css.map */
