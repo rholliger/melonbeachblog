@@ -113,7 +113,10 @@ module.exports.createArticle = function(req, res) {
 module.exports.updateArticle = function(req, res) {
   if (req.params && req.params.articleId) {
     Article.findByIdAndUpdate(req.params.articleId, {
-      title: 'Dieser Artikel ist geupdated worden'
+      title: req.body.title,
+      slug: req.body.slug,
+      category: req.body.category,
+      content: req.body.content
     }, function(err, article) {
       if (err) {
         utils.sendJSONResponse(res, 400, {

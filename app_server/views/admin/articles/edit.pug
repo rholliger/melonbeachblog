@@ -5,7 +5,7 @@ block adminContent
     h1 Edit Article
     
     .creation
-      form.editForm(name='editForm')
+      form(name='edit')
         label(for='title') Titel
         input#title(type='text' name='title' value=article.title placeholder='Titel eingeben')
         label(for='slug') Slug

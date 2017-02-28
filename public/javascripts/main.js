@@ -1,5 +1,29 @@
-$('form.createForm').submit(function(e) {
+var ajaxSettings = {
+  url: 'http://localhost:3000/api',
+  dataType: 'json',
+  contentType: 'application/json'  
+}
+
+function request(path, method, data, successCallback, errorCallback) {
+  $.ajax({
+    url: ajaxSettings.url + path,
+    method: method,
+    contentType: ajaxSettings.contentType,
+    dataType: ajaxSettings.dataType,
+    data: JSON.stringify(data),
+    success: function(data, status, jqXHR) {
+      successCallback(data, status, jqXHR);
+    },
+    error: function(jqXHR, status, error) {
+      errorCallback(jqXHR, status, error);
+    }
+  }); 
+}
+
+$('form').submit(function(e) {
   e.preventDefault();
+  console.log('submitted', $(this).attr('name'));
+  var type = $(this).attr('name');
 
   var data = {
     title: $(this).find('input[name="title"]').val(),
@@ -10,19 +34,20 @@ $('form.createForm').submit(function(e) {
 
   console.log(JSON.stringify(data));
 
-  $.ajax({
-    url: 'http://localhost:3000/api/articles',
-    method: 'POST',
-    contentType: 'application/json',
-    dataType: 'json',
-    data: JSON.stringify(data),
-    success: function(data, status, jqXHR) {
+  if (type === 'create') {
+    request('/articles', 'POST', data, function(data, status, jqXHR) {
       var location = jqXHR.getResponseHeader('Location');
       // window.location.replace('/admin' + location);
       window.location.replace('/admin/articles');
-    },
-    error: function(jqXHR, status, error) {
+    }, function(jqXHR, status, error) {
       console.log(JSON.parse(jqXHR.responseText));
-    }
-  });
-});
+    });
+  } else {
+    var articleId = window.location.pathname.substr(window.location.pathname.lastIndexOf('/')+1);
+    request('/articles/'+articleId, 'PUT', data, function(data, status, jqXHR) {
+      window.location.replace('/admin/articles');
+    }, function(jqXHR, status, error) {
+      console.log(JSON.parse(jqXHR.responseText));
+    })
+  }
+})
