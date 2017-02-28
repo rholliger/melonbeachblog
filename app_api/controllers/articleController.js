@@ -44,7 +44,7 @@ module.exports.getArticles = function(req, res) {
     return;
   }
 
-  Article.find({}, function(err, articles) {
+  Article.find({}).sort({createdDate: -1}).exec(function(err, articles) {
     if (err) {
       utils.sendJSONResponse(res, 400, {
         'message': err

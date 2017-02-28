@@ -18,7 +18,8 @@ $('form.createForm').submit(function(e) {
     data: JSON.stringify(data),
     success: function(data, status, jqXHR) {
       var location = jqXHR.getResponseHeader('Location');
-      window.location.replace('/admin' + location);
+      // window.location.replace('/admin' + location);
+      window.location.replace('/admin/articles');
     },
     error: function(jqXHR, status, error) {
       console.log(JSON.parse(jqXHR.responseText));

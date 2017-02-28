@@ -1,12 +1,39 @@
 var request = require('request');
+var utils = require('../../libs/utils');
 
 var apiOptions = {
   serverUrl: 'http://localhost:3000/api'
 };
 
+function getCategories() {
+  request({
+    url: apiOptions.serverUrl + '/categories',
+    method: 'GET',
+    json: {}
+  }, function(err, response, body) {
+    return body;
+  });
+}
+
 // Show all articles from the database and present them in the article list view
 module.exports.showArticleList = function(req, res) {
-  res.render('admin/index', { title: 'MelonBeach Blog Article List' });
+  request({
+    url: apiOptions.serverUrl + '/articles',
+    method: 'GET',
+    json: {}
+  }, function(err, response, body) {
+    for (data of body) {
+      data.category = utils.capitalize(data.category);
+      data.createdDate = utils.formatDate(data.createdDate, 'DD.MM.YYYY');
+      data.content = utils.createExcerpt(data.content, 100);
+    }
+
+    res.render('admin/articles/list', { 
+      title: 'MelonBeach Blog Article Creation',
+      type: 'articles',
+      articles: body
+    });
+  });
 };
 
 // Show the article creation view
@@ -17,7 +44,7 @@ module.exports.showArticleCreation = function(req, res) {
     method: 'GET',
     json: {}
   }, function(err, response, body) {
-    res.render('admin/create', { 
+    res.render('admin/articles/create', { 
       title: 'MelonBeach Blog Article Creation',
       type: 'articles',
       categories: body
@@ -27,10 +54,34 @@ module.exports.showArticleCreation = function(req, res) {
 
 // Show the article edit view
 module.exports.showArticleUpdate = function(req, res) {
-  res.render('admin/index', { title: 'MelonBeach Blog Article Creation' }); 
+  console.log(getCategories());
+
+  request({
+    url: apiOptions.serverUrl + '/articles/' + req.params.articleId,
+    method: 'GET',
+    json: {}
+  }, function(err, response, body) {
+    var article = body;
+    article.category = utils.capitalize(article.category);
+
+    request({
+      url: apiOptions.serverUrl + '/categories',
+      method: 'GET',
+      json: {}
+    }, function(err, response, body) {
+      res.render('admin/articles/edit', { 
+        title: 'MelonBeach Blog Article Creation',
+        type: 'articles',
+        article: article,
+        categories: body
+      });
+    });
+  });
 };
 
 // Show the deletion of an article
 module.exports.deleteArticle = function(req, res) {
+  // console.log('delete');
+  // res.redirect('/admin/articles')
   res.render('admin/index', { title: 'MelonBeach Blog Article Deletion' }); 
 };

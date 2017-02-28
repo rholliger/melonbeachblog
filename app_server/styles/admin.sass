@@ -1,0 +1,113 @@
+#admin
+  &.container
+    max-width: 1000px
+
+  .row
+    margin-bottom: 20px
+
+    nav
+      padding-right: 0
+
+      ul
+        list-style: none
+        list-style-type: none
+        margin: 0
+        padding: 0
+
+        li
+          a
+            display: block
+            padding: 10px 0
+            text-align: center
+
+            &:hover
+              background-color: $green
+              color: white
+
+            &.active
+              background-color: $green
+              color: white
+
+            span
+              font-size: 42px
+
+    section
+      background-color: white
+      border: 3px solid $green
+      padding-top: 10px
+
+      #articles
+        a.createArticle
+          font-size: 30px
+          padding: 2px 4px
+
+          &:hover
+            background-color: $green
+            color: white
+
+        .creation
+          form
+            label
+              margin-top: 20px
+              display: inline-block
+
+            input, select, textarea
+              margin: 5px 0 5px 0
+
+            input, textarea
+              width: 100%
+              padding: 8px
+              border: 1px solid #f0f0f0
+              background-color: #fbfbfb
+              outline: 0
+
+            select
+              display: block
+
+            input[type='submit']
+              margin: 20px 0
+
+        .list
+          margin: 12px 0
+
+          table
+            width: 100%
+            color: #BDBDBD
+
+            tr
+              &:hover
+                background-color: $green
+                color: white
+
+                td
+                  a
+                    color: white
+
+              th
+                text-align: left
+
+              td
+                padding: 4px
+
+                &:first-child
+                  width: 10%
+
+                &:nth-child(2)
+                  width: 14%
+
+                &:nth-child(3)
+                  width: 30%
+
+                &:nth-child(4)
+                  width: 36%
+
+                &:nth-child(5)
+                  width: 10%
+
+                &.options
+                  text-align: right
+
+                  a
+                    cursor: pointer
+                    padding-left: 14px
+                    font-size: 20px

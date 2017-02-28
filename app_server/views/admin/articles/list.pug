@@ -1,0 +1,30 @@
+extends ../index
+
+block adminContent
+  #articles
+    h1.pull-left Articles
+    a.createArticle.pull-right(href='articles/create')
+      span.glyphicon.glyphicon-plus
+
+    .clearfix
+
+    .list
+      table
+        //- tr
+        //-   th Date
+        //-   th Category
+        //-   th Title
+        //-   th Content
+        //-   th
+
+        each article in articles
+          tr
+            td= article.createdDate
+            td= article.category
+            td= article.title
+            td= article.content
+            td.options
+              a(href='/admin/articles/edit/'+article._id)
+                span.glyphicon.glyphicon-pencil
+              a(href='/admin/articles/delete/'+article._id)
+                span.glyphicon.glyphicon-remove

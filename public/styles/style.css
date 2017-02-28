@@ -47,6 +47,86 @@
   font-weight: normal;
   font-style: normal; }
 
+#admin.container {
+  max-width: 1000px; }
+
+#admin .row {
+  margin-bottom: 20px; }
+  #admin .row nav {
+    padding-right: 0; }
+    #admin .row nav ul {
+      list-style: none;
+      list-style-type: none;
+      margin: 0;
+      padding: 0; }
+      #admin .row nav ul li a {
+        display: block;
+        padding: 10px 0;
+        text-align: center; }
+        #admin .row nav ul li a:hover {
+          background-color: #BACB63;
+          color: white; }
+        #admin .row nav ul li a.active {
+          background-color: #BACB63;
+          color: white; }
+        #admin .row nav ul li a span {
+          font-size: 42px; }
+  #admin .row section {
+    background-color: white;
+    border: 3px solid #BACB63;
+    padding-top: 10px; }
+    #admin .row section #articles a.createArticle {
+      font-size: 30px;
+      padding: 2px 4px; }
+      #admin .row section #articles a.createArticle:hover {
+        background-color: #BACB63;
+        color: white; }
+    #admin .row section #articles .creation form label {
+      margin-top: 20px;
+      display: inline-block; }
+    #admin .row section #articles .creation form input, #admin .row section #articles .creation form select, #admin .row section #articles .creation form textarea {
+      margin: 5px 0 5px 0; }
+    #admin .row section #articles .creation form input, #admin .row section #articles .creation form textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #f0f0f0;
+      background-color: #fbfbfb;
+      outline: 0; }
+    #admin .row section #articles .creation form select {
+      display: block; }
+    #admin .row section #articles .creation form input[type='submit'] {
+      margin: 20px 0; }
+    #admin .row section #articles .list {
+      margin: 12px 0; }
+      #admin .row section #articles .list table {
+        width: 100%;
+        color: #BDBDBD; }
+        #admin .row section #articles .list table tr:hover {
+          background-color: #BACB63;
+          color: white; }
+          #admin .row section #articles .list table tr:hover td a {
+            color: white; }
+        #admin .row section #articles .list table tr th {
+          text-align: left; }
+        #admin .row section #articles .list table tr td {
+          padding: 4px; }
+          #admin .row section #articles .list table tr td:first-child {
+            width: 10%; }
+          #admin .row section #articles .list table tr td:nth-child(2) {
+            width: 14%; }
+          #admin .row section #articles .list table tr td:nth-child(3) {
+            width: 30%; }
+          #admin .row section #articles .list table tr td:nth-child(4) {
+            width: 36%; }
+          #admin .row section #articles .list table tr td:nth-child(5) {
+            width: 10%; }
+          #admin .row section #articles .list table tr td.options {
+            text-align: right; }
+            #admin .row section #articles .list table tr td.options a {
+              cursor: pointer;
+              padding-left: 14px;
+              font-size: 20px; }
+
 body {
   background-color: #F0F0F0; }
   body h1, body h2, body h3, body h4, body small {
@@ -126,44 +206,5 @@ body {
         color: #A1A1A1; }
       body #articles-container article .text-container .button {
         display: inline-block; }
-  body #admin.container {
-    max-width: 1000px; }
-  body #admin nav {
-    padding-right: 0; }
-    body #admin nav ul {
-      list-style: none;
-      list-style-type: none;
-      margin: 0;
-      padding: 0; }
-      body #admin nav ul li a {
-        display: block;
-        padding: 10px 0;
-        text-align: center; }
-        body #admin nav ul li a:hover {
-          background-color: #BACB63;
-          color: white; }
-        body #admin nav ul li a.active {
-          background-color: #BACB63;
-          color: white; }
-        body #admin nav ul li a span {
-          font-size: 42px; }
-  body #admin section {
-    background-color: white;
-    border: 3px solid #BACB63; }
-    body #admin section .creation form label {
-      margin-top: 20px;
-      display: inline-block; }
-    body #admin section .creation form input, body #admin section .creation form select, body #admin section .creation form textarea {
-      margin: 5px 0 5px 0; }
-    body #admin section .creation form input, body #admin section .creation form textarea {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #f0f0f0;
-      background-color: #fbfbfb;
-      outline: 0; }
-    body #admin section .creation form select {
-      display: block; }
-    body #admin section .creation form input[type='submit'] {
-      margin: 20px 0; }
 
 /*# sourceMappingURL=style.css.map */

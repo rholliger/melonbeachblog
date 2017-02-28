@@ -1,5 +1,6 @@
 @import 'colors'
 @import 'fonts'
+@import 'admin'
 
 body
   background-color: #F0F0F0
@@ -106,63 +107,4 @@ body
 
         .button
           display: inline-block
-
-
-  #admin
-    &.container
-      max-width: 1000px
-
-    nav
-      padding-right: 0
-
-      ul
-        list-style: none
-        list-style-type: none
-        margin: 0
-        padding: 0
-
-        li
-          a
-            display: block
-            padding: 10px 0
-            text-align: center
-
-            &:hover
-              background-color: $green
-              color: white
-
-            &.active
-              background-color: $green
-              color: white
-
-            span
-              font-size: 42px
-
-    section
-      background-color: white
-      border: 3px solid $green
-    
-      .creation
-        // padding: 10px 20px
-
-        form
-          label
-            margin-top: 20px
-            display: inline-block
-
-          input, select, textarea
-            margin: 5px 0 5px 0
-
-          input, textarea
-            width: 100%
-            padding: 8px
-            border: 1px solid #f0f0f0
-            background-color: #fbfbfb
-            outline: 0
-
-          select
-            display: block
-
-          input[type='submit']
-            margin: 20px 0
 

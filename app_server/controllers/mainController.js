@@ -6,10 +6,6 @@ var apiOptions = {
   serverUrl: 'http://localhost:3000/api'
 };
 
-function formatDate(date) {
-  return moment(date).format('DD. MMMM YYYY');
-}
-
 function requestArticles(path, callback) {
   request({
     url: apiOptions.serverUrl + '/articles' + path,
@@ -18,13 +14,11 @@ function requestArticles(path, callback) {
   }, function(err, response, body) {
     if (Array.isArray(body)) {
       for (data of body) {
-        if (data.content.length > 600) {
-          data.content = data.content.substr(0, 600) + '...';
-        }
-        data.createdDate = formatDate(data.createdDate);
+        data.content = utils.createExcerpt(data.content, 600);
+        data.createdDate = utils.formatDate(data.createdDate);
       }
     } else {
-      body.createdDate = formatDate(body.createdDate);
+      body.createdDate = utils.formatDate(body.createdDate);
     }
     callback(body, err);
   });
