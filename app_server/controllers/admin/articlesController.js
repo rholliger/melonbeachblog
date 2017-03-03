@@ -24,7 +24,7 @@ module.exports.showArticleList = function(req, res) {
   }, function(err, response, body) {
     for (data of body) {
       data.category = utils.capitalize(data.category);
-      data.createdDate = utils.formatDate(data.createdDate, 'DD.MM.YYYY');
+      data.createdDate = utils.formatDate(data.createdDate, 'DD.MM.YYYY HH:MM');
       data.content = utils.createExcerpt(data.content, 100);
     }
 
@@ -81,7 +81,10 @@ module.exports.showArticleUpdate = function(req, res) {
 
 // Show the deletion of an article
 module.exports.deleteArticle = function(req, res) {
-  // console.log('delete');
-  // res.redirect('/admin/articles')
-  res.render('admin/index', { title: 'MelonBeach Blog Article Deletion' }); 
+  request({
+    url: apiOptions.serverUrl + '/articles/' + req.params.articleId,
+    method: 'DELETE',
+  }, function(err, response, body) {
+    res.redirect('/admin/articles');
+  });
 };

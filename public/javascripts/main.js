@@ -50,4 +50,18 @@ $('form').submit(function(e) {
       console.log(JSON.parse(jqXHR.responseText));
     })
   }
-})
+});
+
+$('.list').find('a.delete').on('click', function(e) {
+  e.preventDefault();
+  console.log('clicked', e.currentTarget.href);
+  swal({
+    title: 'Delete Article',
+    text: 'Do you really want to delete this article?',
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Yes'
+  }, function() {
+    window.location.href = e.currentTarget.href;
+  });
+});

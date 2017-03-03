@@ -47,6 +47,9 @@
   font-weight: normal;
   font-style: normal; }
 
+#admin a {
+  outline: none; }
+
 #admin.container {
   max-width: 1000px; }
 
@@ -101,31 +104,40 @@
       #admin .row section #articles .list table {
         width: 100%;
         color: #BDBDBD; }
-        #admin .row section #articles .list table tr:hover {
-          background-color: #BACB63;
-          color: white; }
-          #admin .row section #articles .list table tr:hover td a {
+        #admin .row section #articles .list table thead tr {
+          border-bottom: 2px solid #F0F0F0; }
+          #admin .row section #articles .list table thead tr th {
+            padding-bottom: 2px;
+            text-align: left; }
+        #admin .row section #articles .list table tbody tr {
+          border-bottom: 1px solid #F0F0F0; }
+          #admin .row section #articles .list table tbody tr:hover {
+            background-color: #BACB63;
             color: white; }
-        #admin .row section #articles .list table tr th {
-          text-align: left; }
-        #admin .row section #articles .list table tr td {
-          padding: 4px; }
-          #admin .row section #articles .list table tr td:first-child {
-            width: 10%; }
-          #admin .row section #articles .list table tr td:nth-child(2) {
-            width: 14%; }
-          #admin .row section #articles .list table tr td:nth-child(3) {
-            width: 30%; }
-          #admin .row section #articles .list table tr td:nth-child(4) {
-            width: 36%; }
-          #admin .row section #articles .list table tr td:nth-child(5) {
-            width: 10%; }
-          #admin .row section #articles .list table tr td.options {
-            text-align: right; }
-            #admin .row section #articles .list table tr td.options a {
-              cursor: pointer;
-              padding-left: 14px;
-              font-size: 20px; }
+            #admin .row section #articles .list table tbody tr:hover a {
+              color: white; }
+          #admin .row section #articles .list table tbody tr:first-child td {
+            padding-top: 10px; }
+          #admin .row section #articles .list table tbody tr td a {
+            color: #BACB63; }
+          #admin .row section #articles .list table tbody tr td {
+            padding: 4px; }
+            #admin .row section #articles .list table tbody tr td:first-child {
+              width: 10%; }
+            #admin .row section #articles .list table tbody tr td:nth-child(2) {
+              width: 14%; }
+            #admin .row section #articles .list table tbody tr td:nth-child(3) {
+              width: 30%; }
+            #admin .row section #articles .list table tbody tr td:nth-child(4) {
+              width: 36%; }
+            #admin .row section #articles .list table tbody tr td:nth-child(5) {
+              width: 10%; }
+            #admin .row section #articles .list table tbody tr td.options {
+              text-align: right; }
+              #admin .row section #articles .list table tbody tr td.options a {
+                cursor: pointer;
+                padding-left: 14px;
+                font-size: 20px; }
 
 body {
   background-color: #F0F0F0; }

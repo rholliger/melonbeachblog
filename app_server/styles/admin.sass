@@ -1,4 +1,7 @@
 #admin
+  a
+    outline: none
+
   &.container
     max-width: 1000px
 
@@ -74,40 +77,55 @@
             width: 100%
             color: #BDBDBD
 
-            tr
-              &:hover
-                background-color: $green
-                color: white
+            thead
+              tr
+                border-bottom: 2px solid #F0F0F0
 
-                td
+                th
+                  padding-bottom: 2px
+                  text-align: left
+
+            tbody
+              tr
+                border-bottom: 1px solid #F0F0F0
+
+                &:hover
+                  background-color: $green
+                  color: white
+
                   a
                     color: white
 
-              th
-                text-align: left
-
-              td
-                padding: 4px
-
                 &:first-child
-                  width: 10%
+                  td
+                    padding-top: 10px
 
-                &:nth-child(2)
-                  width: 14%
-
-                &:nth-child(3)
-                  width: 30%
-
-                &:nth-child(4)
-                  width: 36%
-
-                &:nth-child(5)
-                  width: 10%
-
-                &.options
-                  text-align: right
-
+                td
                   a
-                    cursor: pointer
-                    padding-left: 14px
-                    font-size: 20px
+                    color: $green
+
+                td
+                  padding: 4px
+
+                  &:first-child
+                    width: 10%
+
+                  &:nth-child(2)
+                    width: 14%
+
+                  &:nth-child(3)
+                    width: 30%
+
+                  &:nth-child(4)
+                    width: 36%
+
+                  &:nth-child(5)
+                    width: 10%
+
+                  &.options
+                    text-align: right
+
+                    a
+                      cursor: pointer
+                      padding-left: 14px
+                      font-size: 20px
