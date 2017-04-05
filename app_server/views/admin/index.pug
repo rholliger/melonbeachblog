@@ -1,22 +1,4 @@
-extends ../layout
+extends layout
 
 block content
-  #admin.container
-    h1 Admin Homepage
-
-    .row
-      nav.col-sm-2
-        -var menu = { 'articles': { url: '/admin/articles', icon: 'edit' }, 'media': { url: '/admin/media', icon: 'picture' }, 'settings': { url: '/admin/settings', icon: 'cog' } }
-
-        ul
-          each value, key in menu
-            li
-              if type === key
-                a.active(href=value.url)
-                  span(class='glyphicon glyphicon-'+value.icon)
-              else
-                a(href=value.url)
-                  span(class='glyphicon glyphicon-'+value.icon)
-
-      section.col-sm-10
-        block adminContent
+  block adminContent

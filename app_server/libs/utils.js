@@ -6,7 +6,7 @@ module.exports.capitalize = function(string) {
 
 module.exports.formatDate = function(date, format) {
   var dateFormat = format ? format : 'DD. MMMM YYYY';
-  return moment(date).format(dateFormat);
+  return moment(date).utc().format(dateFormat);
 }
 
 module.exports.createExcerpt = function(text, charLength) {

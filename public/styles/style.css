@@ -47,96 +47,152 @@
   font-weight: normal;
   font-style: normal; }
 
-#admin a {
-  outline: none; }
-
-#admin.container {
-  max-width: 1000px; }
-
-#admin .row {
-  margin-bottom: 20px; }
-  #admin .row nav {
-    padding-right: 0; }
-    #admin .row nav ul {
-      list-style: none;
-      list-style-type: none;
-      margin: 0;
-      padding: 0; }
-      #admin .row nav ul li a {
-        display: block;
-        padding: 10px 0;
-        text-align: center; }
-        #admin .row nav ul li a:hover {
-          background-color: #BACB63;
-          color: white; }
-        #admin .row nav ul li a.active {
-          background-color: #BACB63;
-          color: white; }
-        #admin .row nav ul li a span {
-          font-size: 42px; }
-  #admin .row section {
-    background-color: white;
-    border: 3px solid #BACB63;
-    padding-top: 10px; }
-    #admin .row section #articles a.createArticle {
-      font-size: 30px;
-      padding: 2px 4px; }
-      #admin .row section #articles a.createArticle:hover {
-        background-color: #BACB63;
-        color: white; }
-    #admin .row section #articles .creation form label {
+#admin {
+  padding-top: 60px; }
+  #admin h1 {
+    color: #659057; }
+  #admin a {
+    outline: none; }
+  #admin.container {
+    max-width: 1000px; }
+  #admin nav a {
+    color: #659057; }
+  #admin nav.navbar {
+    width: 100%;
+    height: 50px;
+    background-color: #3F3F3F; }
+    #admin nav.navbar .user-nav {
+      margin: 14px; }
+      #admin nav.navbar .user-nav a span {
+        font-size: 30px; }
+  #admin .wrapper #sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background-color: #3F3F3F;
+    width: 200px;
+    box-shadow: inset -1px 0px 3px rgba(0, 0, 0, 0.4); }
+    #admin .wrapper #sidebar #admin-logo-container {
+      width: 126px;
+      margin: 55px auto; }
+      #admin .wrapper #sidebar #admin-logo-container #small-logo {
+        background-image: url("../images/logo_small@2x.png");
+        background-size: 126px 39px;
+        height: 39px; }
+    #admin .wrapper #sidebar nav {
+      padding-right: 0; }
+      #admin .wrapper #sidebar nav ul {
+        list-style: none;
+        list-style-type: none;
+        margin: 0;
+        padding: 0; }
+        #admin .wrapper #sidebar nav ul li {
+          color: #659057;
+          position: relative;
+          width: 210px; }
+          #admin .wrapper #sidebar nav ul li.active a {
+            background-color: #659057;
+            color: #8AB57B;
+            border-left: 4px solid #8AB57B; }
+          #admin .wrapper #sidebar nav ul li.active .right-edge {
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            right: 0px;
+            bottom: -10px;
+            border-width: 10px 10px 0 0;
+            border-style: solid;
+            border-color: #659057 transparent transparent transparent; }
+          #admin .wrapper #sidebar nav ul li a {
+            display: block;
+            padding: 12px 0;
+            height: 100%; }
+            #admin .wrapper #sidebar nav ul li a:hover {
+              color: #8AB57B; }
+            #admin .wrapper #sidebar nav ul li a span {
+              font-size: 18px;
+              padding-left: 20px;
+              vertical-align: middle; }
+              #admin .wrapper #sidebar nav ul li a span.glyphicon {
+                font-size: 28px; }
+  #admin .wrapper #content {
+    background-color: #F0F0F0;
+    padding: 14px;
+    padding-left: 210px;
+    height: 3000px; }
+    #admin .wrapper #content nav {
+      margin-left: 200px;
+      background-color: #8AB57B;
+      border-bottom: 2px solid #659057; }
+    #admin .wrapper #content #articles .header {
+      border-bottom: 1px solid #e0e0e0; }
+      #admin .wrapper #content #articles .header a.createArticle {
+        font-size: 30px;
+        padding: 2px 4px;
+        color: #659057; }
+        #admin .wrapper #content #articles .header a.createArticle:hover {
+          color: #8AB57B; }
+    #admin .wrapper #content #articles .creation form label {
       margin-top: 20px;
       display: inline-block; }
-    #admin .row section #articles .creation form input, #admin .row section #articles .creation form select, #admin .row section #articles .creation form textarea {
+    #admin .wrapper #content #articles .creation form input, #admin .wrapper #content #articles .creation form select, #admin .wrapper #content #articles .creation form textarea {
       margin: 5px 0 5px 0; }
-    #admin .row section #articles .creation form input, #admin .row section #articles .creation form textarea {
+    #admin .wrapper #content #articles .creation form input, #admin .wrapper #content #articles .creation form textarea {
       width: 100%;
       padding: 8px;
       border: 1px solid #f0f0f0;
       background-color: #fbfbfb;
       outline: 0; }
-    #admin .row section #articles .creation form select {
+    #admin .wrapper #content #articles .creation form select {
       display: block; }
-    #admin .row section #articles .creation form input[type='submit'] {
+    #admin .wrapper #content #articles .creation form input[type='submit'] {
       margin: 20px 0; }
-    #admin .row section #articles .list {
-      margin: 12px 0; }
-      #admin .row section #articles .list table {
+    #admin .wrapper #content #articles .list {
+      margin: 30px 0 12px 0;
+      border-bottom: 1px solid #d8d8d8; }
+      #admin .wrapper #content #articles .list table {
         width: 100%;
-        color: #BDBDBD; }
-        #admin .row section #articles .list table thead tr {
-          border-bottom: 2px solid #F0F0F0; }
-          #admin .row section #articles .list table thead tr th {
-            padding-bottom: 2px;
-            text-align: left; }
-        #admin .row section #articles .list table tbody tr {
-          border-bottom: 1px solid #F0F0F0; }
-          #admin .row section #articles .list table tbody tr:hover {
-            background-color: #BACB63;
-            color: white; }
-            #admin .row section #articles .list table tbody tr:hover a {
+        color: #3F3F3F; }
+        #admin .wrapper #content #articles .list table thead {
+          background-color: #8AB57B; }
+          #admin .wrapper #content #articles .list table thead tr {
+            border-bottom: 2px solid #659057; }
+            #admin .wrapper #content #articles .list table thead tr th {
+              padding-bottom: 2px;
+              text-align: left;
+              padding: 10px 20px;
+              color: #659057; }
+        #admin .wrapper #content #articles .list table tbody {
+          background-color: white; }
+          #admin .wrapper #content #articles .list table tbody tr:not(:last-child) {
+            border-bottom: 1px solid #E0E0E0; }
+          #admin .wrapper #content #articles .list table tbody tr:hover {
+            background-color: #f8f8f8; }
+            #admin .wrapper #content #articles .list table tbody tr:hover a {
               color: white; }
-          #admin .row section #articles .list table tbody tr:first-child td {
+          #admin .wrapper #content #articles .list table tbody tr:first-child td {
             padding-top: 10px; }
-          #admin .row section #articles .list table tbody tr td a {
-            color: #BACB63; }
-          #admin .row section #articles .list table tbody tr td {
-            padding: 4px; }
-            #admin .row section #articles .list table tbody tr td:first-child {
+          #admin .wrapper #content #articles .list table tbody tr td a.edit {
+            color: #3DA8DB; }
+          #admin .wrapper #content #articles .list table tbody tr td a.delete {
+            color: #BC2E42; }
+          #admin .wrapper #content #articles .list table tbody tr td {
+            padding: 10px 20px; }
+            #admin .wrapper #content #articles .list table tbody tr td:first-child {
               width: 10%; }
-            #admin .row section #articles .list table tbody tr td:nth-child(2) {
+            #admin .wrapper #content #articles .list table tbody tr td:nth-child(2) {
               width: 14%; }
-            #admin .row section #articles .list table tbody tr td:nth-child(3) {
+            #admin .wrapper #content #articles .list table tbody tr td:nth-child(3) {
               width: 30%; }
-            #admin .row section #articles .list table tbody tr td:nth-child(4) {
+            #admin .wrapper #content #articles .list table tbody tr td:nth-child(4) {
               width: 36%; }
-            #admin .row section #articles .list table tbody tr td:nth-child(5) {
+            #admin .wrapper #content #articles .list table tbody tr td:nth-child(5) {
               width: 10%; }
-            #admin .row section #articles .list table tbody tr td.options {
+            #admin .wrapper #content #articles .list table tbody tr td.options {
               text-align: right; }
-              #admin .row section #articles .list table tbody tr td.options a {
+              #admin .wrapper #content #articles .list table tbody tr td.options a {
                 cursor: pointer;
-                padding-left: 14px;
+                padding-left: 10px;
                 font-size: 20px; }
 
 body {
@@ -144,23 +200,23 @@ body {
   body h1, body h2, body h3, body h4, body small {
     margin: 0; }
   body a {
-    color: #BACB63; }
+    color: #8AB57B; }
     body a:hover {
       color: #F8B235;
       text-decoration: none; }
     body a:visited, body a:focus {
-      color: #BACB63;
+      color: #8AB57B;
       text-decoration: none; }
   body .button {
     font-family: 'Oswald-Light';
     text-transform: uppercase;
     font-size: 16px;
     background-color: white;
-    border: 2px solid #BACB63;
+    border: 2px solid #8AB57B;
     padding: 8px 12px;
-    color: #BACB63; }
+    color: #8AB57B; }
     body .button:hover {
-      background-color: #BACB63;
+      background-color: #8AB57B;
       color: white; }
   body .wrapper #logo-container {
     width: 300px;
@@ -177,7 +233,7 @@ body {
       font-size: 26px;
       margin-top: 20px; }
       body .wrapper #logo-container h1 .green {
-        color: #BACB63; }
+        color: #8AB57B; }
       body .wrapper #logo-container h1 .orange {
         color: #F8B235; }
       body .wrapper #logo-container h1 .blue {
@@ -187,7 +243,7 @@ body {
   body #articles-container article {
     margin-bottom: 80px; }
     body #articles-container article .image-container {
-      border-bottom: 6px solid #BACB63; }
+      border-bottom: 6px solid #8AB57B; }
     body #articles-container article .text-container {
       background-color: white;
       padding: 0 30px 30px; }
@@ -200,10 +256,10 @@ body {
         body #articles-container article .text-container .title-container h2, body #articles-container article .text-container .title-container h3, body #articles-container article .text-container .title-container h4 {
           font-family: 'Oswald-Light';
           font-weight: normal;
-          color: #BDBDBD; }
+          color: #F0F0F0; }
         body #articles-container article .text-container .title-container h1 {
           padding-top: 2px;
-          color: #BACB63;
+          color: #8AB57B;
           letter-spacing: 0.5px; }
         body #articles-container article .text-container .title-container h2 {
           padding-top: 16px;

@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title= title
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/styles/vendor/sweetalert.css')
+    link(rel='stylesheet', href='/styles/style.css')
+  body
+    #admin
+      .wrapper
+        #sidebar
+          #admin-logo-container
+            #small-logo
+
+          nav
+            -var menu = { 'articles': { name: 'Articles', url: '/admin/articles', icon: 'edit' }, 'media': { name: 'Media', url: '/admin/media', icon: 'picture' }, 'settings': { name: 'Settings', url: '/admin/settings', icon: 'cog' } }
+
+            ul
+              each value, key in menu
+                li(class= type === key ? 'active' : '')
+                  a(href=value.url)
+                    span(class='glyphicon glyphicon-'+value.icon)
+                    span= value.name
+                  span.right-edge
+
+        #content
+          nav.navbar.navbar-fixed-top
+            .container-fluid
+              .user-nav.pull-right
+                a(href='#')
+                  span.glyphicon.glyphicon-off
+
+          .container-fluid
+            .row
+              section.col-lg-12
+                block content
+
+    script(src='/javascripts/vendor/jquery-3.1.1.min.js')
+    script(src='/javascripts/vendor/sweetalert.min.js')
+    script(src='/javascripts/main.js')

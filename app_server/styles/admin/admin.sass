@@ -1,0 +1,209 @@
+#admin
+  padding-top: 60px
+
+  h1
+    color: $darkGreen
+
+  a
+    outline: none
+
+  &.container
+    max-width: 1000px
+
+  nav
+    a
+      color: $darkGreen
+
+    &.navbar
+      width: 100%
+      height: 50px
+      background-color: $darkGrey
+
+      .user-nav
+        margin: 14px
+        a
+          span
+            font-size: 30px
+
+  .wrapper
+    #sidebar
+      position: fixed
+      top: 0
+      bottom: 0
+      background-color: $darkGrey
+      width: 200px
+      // border-right: 3px solid #333
+      box-shadow: inset -1px 0px 3px rgba(0, 0, 0, 0.4)
+
+      #admin-logo-container
+        width: 126px
+        margin: 55px auto
+
+        #small-logo
+          background-image: url('../images/logo_small@2x.png')
+          background-size: 126px 39px
+          height: 39px
+
+      nav
+        padding-right: 0
+
+        ul
+          list-style: none
+          list-style-type: none
+          margin: 0
+          padding: 0
+
+          li
+            color: $darkGreen
+            position: relative
+            width: 210px
+
+            &.active
+              a
+                background-color: $darkGreen
+                color: $lightGreen
+                border-left: 4px solid $lightGreen
+
+              .right-edge
+                position: absolute
+                width: 0px
+                height: 0px
+                right: 0px
+                bottom: -10px
+                border-width: 10px 10px 0 0
+                border-style: solid
+                border-color: $darkGreen transparent transparent transparent
+
+            a
+              display: block
+              padding: 12px 0
+              height: 100%
+
+              &:hover
+                color: $lightGreen
+
+              span
+                font-size: 18px
+                padding-left: 20px
+                vertical-align: middle
+
+                &.glyphicon
+                  font-size: 28px
+
+    #content
+      background-color: $lightGrey
+      padding: 14px
+      padding-left: 210px
+      height: 3000px
+
+      nav
+        margin-left: 200px
+        background-color: $lightGreen
+        border-bottom: 2px solid $darkGreen
+
+      #articles
+        .header
+          border-bottom: 1px solid #e0e0e0
+
+          a.createArticle
+            font-size: 30px
+            padding: 2px 4px
+            color: $darkGreen
+
+            &:hover
+              color: $lightGreen
+
+        .creation
+          form
+            label
+              margin-top: 20px
+              display: inline-block
+
+            input, select, textarea
+              margin: 5px 0 5px 0
+
+            input, textarea
+              width: 100%
+              padding: 8px
+              border: 1px solid #f0f0f0
+              background-color: #fbfbfb
+              outline: 0
+
+            select
+              display: block
+
+            input[type='submit']
+              margin: 20px 0
+
+        .list
+          margin: 30px 0 12px 0
+          // border-bottom: 3px solid $lightGreen
+          border-bottom: 1px solid #d8d8d8
+
+          table
+            width: 100%
+            color: $darkGrey
+
+            thead
+              background-color: $lightGreen
+
+              tr
+                border-bottom: 2px solid $darkGreen
+
+                th
+                  padding-bottom: 2px
+                  text-align: left
+                  padding: 10px 20px
+                  color: $darkGreen
+
+            tbody
+              background-color: white
+
+              tr
+                &:not(:last-child)
+                  border-bottom: 1px solid #E0E0E0
+
+                &:hover
+                  background-color: #f8f8f8
+                  // color: white
+
+                  a
+                    color: white
+
+                &:first-child
+                  td
+                    padding-top: 10px
+
+                td
+                  a
+                    &.edit
+                      color: $blue
+
+                    &.delete
+                      color: $red
+
+                td
+                  padding: 10px 20px
+
+                  &:first-child
+                    width: 10%
+
+                  &:nth-child(2)
+                    width: 14%
+
+                  &:nth-child(3)
+                    width: 30%
+
+                  &:nth-child(4)
+                    width: 36%
+
+                  &:nth-child(5)
+                    width: 10%
+
+                  &.options
+                    text-align: right
+
+                    a
+                      cursor: pointer
+                      padding-left: 10px
+                      font-size: 20px
