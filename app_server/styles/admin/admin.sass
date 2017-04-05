@@ -1,8 +1,11 @@
+@import 'list'
+@import 'creation'
+
 #admin
   padding-top: 60px
 
   h1
-    color: $darkGreen
+    color: $darkGrey
 
   a
     outline: none
@@ -102,8 +105,13 @@
         border-bottom: 2px solid $darkGreen
 
       #articles
+
         .header
           border-bottom: 1px solid #e0e0e0
+          margin-bottom: 29px
+
+          h1
+            margin-bottom: 6px
 
           a.createArticle
             font-size: 30px
@@ -113,97 +121,6 @@
             &:hover
               color: $lightGreen
 
-        .creation
-          form
-            label
-              margin-top: 20px
-              display: inline-block
-
-            input, select, textarea
-              margin: 5px 0 5px 0
-
-            input, textarea
-              width: 100%
-              padding: 8px
-              border: 1px solid #f0f0f0
-              background-color: #fbfbfb
-              outline: 0
-
-            select
-              display: block
-
-            input[type='submit']
-              margin: 20px 0
-
-        .list
-          margin: 30px 0 12px 0
-          // border-bottom: 3px solid $lightGreen
-          border-bottom: 1px solid #d8d8d8
-
-          table
-            width: 100%
-            color: $darkGrey
-
-            thead
-              background-color: $lightGreen
-
-              tr
-                border-bottom: 2px solid $darkGreen
-
-                th
-                  padding-bottom: 2px
-                  text-align: left
-                  padding: 10px 20px
-                  color: $darkGreen
-
-            tbody
-              background-color: white
-
-              tr
-                &:not(:last-child)
-                  border-bottom: 1px solid #E0E0E0
-
-                &:hover
-                  background-color: #f8f8f8
-                  // color: white
-
-                  a
-                    color: white
-
-                &:first-child
-                  td
-                    padding-top: 10px
-
-                td
-                  a
-                    &.edit
-                      color: $blue
-
-                    &.delete
-                      color: $red
-
-                td
-                  padding: 10px 20px
-
-                  &:first-child
-                    width: 10%
-
-                  &:nth-child(2)
-                    width: 14%
-
-                  &:nth-child(3)
-                    width: 30%
-
-                  &:nth-child(4)
-                    width: 36%
-
-                  &:nth-child(5)
-                    width: 10%
-
-                  &.options
-                    text-align: right
-
-                    a
-                      cursor: pointer
-                      padding-left: 10px
-                      font-size: 20px
+        +list
+        +creation
+        
