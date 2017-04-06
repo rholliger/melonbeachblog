@@ -6,12 +6,18 @@ var apiOptions = {
 };
 
 function getCategories() {
-  request({
-    url: apiOptions.serverUrl + '/categories',
-    method: 'GET',
-    json: {}
-  }, function(err, response, body) {
-    return body;
+  return new Promise((resolve, reject) => {
+    request({
+      url: apiOptions.serverUrl + '/categories',
+      method: 'GET',
+      json: {}
+    }, function(err, response, body) {
+      if (!err && body) {
+        resolve(body);
+      } else {
+        reject(err);
+      }
+    });
   });
 }
 
@@ -39,17 +45,15 @@ module.exports.showArticleList = function(req, res) {
 // Show the article creation view
 module.exports.showArticleCreation = function(req, res) {
   // Get all categories for the category selection
-  request({
-    url: apiOptions.serverUrl + '/categories',
-    method: 'GET',
-    json: {}
-  }, function(err, response, body) {
+  getCategories().then((body) => {
     res.render('admin/articles/create', { 
       title: 'MelonBeach Blog Article Creation',
       type: 'articles',
       categories: body
     });
   });
+
+  // TODO: Errorhandling
 };
 
 // Show the article edit view
@@ -64,17 +68,15 @@ module.exports.showArticleUpdate = function(req, res) {
     var article = body;
     article.category = utils.capitalize(article.category);
 
-    request({
-      url: apiOptions.serverUrl + '/categories',
-      method: 'GET',
-      json: {}
-    }, function(err, response, body) {
+    getCategories().then((body) => {
       res.render('admin/articles/edit', { 
         title: 'MelonBeach Blog Article Creation',
         type: 'articles',
         article: article,
         categories: body
       });
+
+      // TODO: Errorhandling
     });
   });
 };
