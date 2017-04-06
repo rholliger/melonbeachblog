@@ -62,6 +62,36 @@ p, input, textarea {
 table {
   font-family: 'Palanquin-Light'; }
 
+button,
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
+  width: 140px;
+  padding: 8px;
+  background-color: #8AB57B;
+  border: 1px solid #8AB57B;
+  border-radius: 3px;
+  color: white;
+  outline: 0; }
+  button:hover,
+  input[type='button']:hover,
+  input[type='submit']:hover,
+  input[type='reset']:hover {
+    background-color: #90C07F; }
+  button.cancel,
+  input[type='button'].cancel,
+  input[type='submit'].cancel,
+  input[type='reset'].cancel {
+    background-color: white;
+    border: 1px solid #BC2E42;
+    color: #BC2E42; }
+    button.cancel:hover,
+    input[type='button'].cancel:hover,
+    input[type='submit'].cancel:hover,
+    input[type='reset'].cancel:hover {
+      background-color: #BC2E42;
+      color: white; }
+
 form {
   background-color: white;
   padding: 16px 20px;
@@ -87,28 +117,14 @@ form {
     margin-bottom: 10px; }
   form button,
   form input[type='button'],
-  form input[type='submit'],
-  form input[type='reset'] {
-    width: 140px;
-    border: 1px solid #8AB57B;
-    border-radius: 3px;
+  form input[type='submit'] {
     margin: 16px 0 8px 0;
     float: right; }
-  form button,
-  form input[type='submit'] {
-    background-color: #8AB57B;
-    color: white; }
-    form button:hover,
-    form input[type='submit']:hover {
-      background-color: #90C07F; }
-  form input[type='button'],
-  form input[type='reset'] {
-    color: #659057;
+  form input[type='button'] {
     margin-right: 10px; }
-    form input[type='button']:hover,
-    form input[type='reset']:hover {
-      color: #90C07F;
-      border-color: #90C07F; }
+
+.alert button:first-child {
+  margin-right: 8px; }
 
 #admin {
   padding-top: 60px; }

@@ -54,13 +54,15 @@ $('form').submit(function(e) {
 
 $('.list').find('a.delete').on('click', function(e) {
   e.preventDefault();
-  console.log('clicked', e.currentTarget.href);
   swal({
     title: 'Delete Article',
     text: 'Do you really want to delete this article?',
     type: 'warning',
     showCancelButton: true,
-    confirmButtonText: 'Yes'
+    confirmButtonText: 'Yes',
+    buttonsStyling: false,
+    cancelButtonClass: 'cancel',
+    customClass: 'alert'
   }, function() {
     window.location.href = e.currentTarget.href;
   });

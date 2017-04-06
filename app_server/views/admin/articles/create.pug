@@ -6,7 +6,7 @@ block adminContent
       h1 Create Article
     
     .creation
-      form
+      form(name='create')
         label(for='title') Titel
         input#title(type='text' name='title' placeholder='Titel eingeben')
         label(for='slug') Slug
@@ -18,5 +18,5 @@ block adminContent
         label(for='content') Artikeltext
         textarea(cols='50' rows='15' name='content' placeholder='Hier kommt der Artikeltext')
         input(type='submit' value='Create')
-        input(type='reset' value='Reset')
+        input(type='button' value='Cancel' class='cancel')
         .clearfix

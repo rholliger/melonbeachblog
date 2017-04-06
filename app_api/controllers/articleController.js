@@ -93,7 +93,7 @@ module.exports.createArticle = function(req, res) {
   Article.create({
     title: req.body.title,
     slug: req.body.slug ? req.body.slug : createSlugFromTitle(req.body.title),
-    author: req.body.author,
+    // author: req.body.author,
     category: req.body.category,
     content: req.body.content
   }, function(err, article) {
