@@ -47,6 +47,69 @@
   font-weight: normal;
   font-style: normal; }
 
+h1, h2, h3, h4, h5,
+table thead,
+#sidebar,
+label {
+  font-family: 'Montserrat'; }
+
+b {
+  font-family: 'Palanquin-Bold'; }
+
+p, input, textarea {
+  font-family: 'Palanquin-Light'; }
+
+table {
+  font-family: 'Palanquin-Light'; }
+
+form {
+  background-color: white;
+  padding: 16px 20px;
+  border-top: 2px solid #8AB57B;
+  border-bottom: 1px solid #dadada; }
+  form input, form select, form textarea {
+    margin: 5px 0 5px 0; }
+  form input, form textarea {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    background-color: white;
+    outline: 0; }
+    form input:focus, form textarea:focus {
+      border: 1px solid #659057;
+      box-shadow: 0px 0px 2px #8AB57B;
+      transition: border 400ms ease-out, box-shadow 400ms ease-out; }
+  form select {
+    display: block; }
+  form input[type='text'],
+  form select {
+    margin-bottom: 10px; }
+  form button,
+  form input[type='button'],
+  form input[type='submit'],
+  form input[type='reset'] {
+    width: 140px;
+    border: 1px solid #8AB57B;
+    border-radius: 3px;
+    margin: 16px 0 8px 0;
+    float: right; }
+  form button,
+  form input[type='submit'] {
+    background-color: #8AB57B;
+    color: white; }
+    form button:hover,
+    form input[type='submit']:hover {
+      background-color: #90C07F; }
+  form input[type='button'],
+  form input[type='reset'] {
+    color: #659057;
+    margin-right: 10px; }
+    form input[type='button']:hover,
+    form input[type='reset']:hover {
+      color: #90C07F;
+      border-color: #90C07F; }
+
 #admin {
   padding-top: 60px; }
   #admin h1 {
@@ -89,6 +152,7 @@
         #admin .wrapper #sidebar nav ul li {
           color: #659057;
           position: relative;
+          margin: 8px 0;
           width: 210px; }
           #admin .wrapper #sidebar nav ul li.active a {
             background-color: #659057;
@@ -105,7 +169,7 @@
             border-color: #659057 transparent transparent transparent; }
           #admin .wrapper #sidebar nav ul li a {
             display: block;
-            padding: 12px 0;
+            padding: 8px 0;
             height: 100%; }
             #admin .wrapper #sidebar nav ul li a:hover {
               color: #8AB57B; }
@@ -182,38 +246,8 @@
                 cursor: pointer;
                 padding-left: 10px;
                 font-size: 20px; }
-    #admin .wrapper #content #articles .creation form {
-      background-color: white;
-      padding: 10px 20px;
-      border-top: 2px solid #8AB57B;
-      border-bottom: 1px solid #dadada; }
-      #admin .wrapper #content #articles .creation form label {
-        margin-top: 20px;
-        display: inline-block; }
-      #admin .wrapper #content #articles .creation form input, #admin .wrapper #content #articles .creation form select, #admin .wrapper #content #articles .creation form textarea {
-        margin: 5px 0 5px 0; }
-      #admin .wrapper #content #articles .creation form input, #admin .wrapper #content #articles .creation form textarea {
-        display: block;
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #ccc;
-        background-color: white;
-        outline: 0; }
-        #admin .wrapper #content #articles .creation form input:focus, #admin .wrapper #content #articles .creation form textarea:focus {
-          border: 1px solid #659057;
-          transition: border 400ms ease-out; }
-      #admin .wrapper #content #articles .creation form select {
-        display: block; }
-      #admin .wrapper #content #articles .creation form input[type='submit'],
-      #admin .wrapper #content #articles .creation form input[type='reset'] {
-        width: 200px;
-        background-color: #8AB57B;
-        color: white;
-        border: 0;
-        border-radius: 3px;
-        float: right;
-        margin: 20px 0;
-        margin-right: 10px; }
+    #admin .wrapper #content #articles .creation form select {
+      display: block; }
 
 body {
   background-color: #F0F0F0; }

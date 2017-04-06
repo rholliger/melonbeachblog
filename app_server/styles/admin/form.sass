@@ -1,0 +1,55 @@
+form
+  background-color: white
+  padding: 16px 20px
+  border-top: 2px solid $lightGreen
+  border-bottom: 1px solid #dadada
+
+  input, select, textarea
+    margin: 5px 0 5px 0
+
+  input, textarea
+    display: block
+    width: 100%
+    padding: 8px
+    border: 1px solid #ccc
+    background-color: white
+    outline: 0
+
+    &:focus
+      border: 1px solid $darkGreen
+      box-shadow: 0px 0px 2px $lightGreen
+      transition: border 400ms ease-out, box-shadow 400ms ease-out
+
+  select
+    display: block
+
+  input[type='text'],
+  select
+    margin-bottom: 10px
+
+  button,
+  input[type='button'],
+  input[type='submit'],
+  input[type='reset']
+    width: 140px
+    border: 1px solid $lightGreen
+    border-radius: 3px
+    margin: 16px 0 8px 0
+    float: right
+
+  button,
+  input[type='submit']
+    background-color: $lightGreen
+    color: white
+
+    &:hover
+      background-color: #90C07F
+
+  input[type='button'],
+  input[type='reset']
+    color: $darkGreen
+    margin-right: 10px
+
+    &:hover
+      color: #90C07F
+      border-color: #90C07F

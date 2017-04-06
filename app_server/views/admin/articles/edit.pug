@@ -5,8 +5,8 @@ block adminContent
     .header
         h1 Edit Article
     
-    .creation
-      form(name='edit')
+    .edit
+      form
         label(for='title') Titel
         input#title(type='text' name='title' value=article.title placeholder='Titel eingeben')
         label(for='slug') Slug
@@ -21,3 +21,5 @@ block adminContent
         label(for='content') Artikeltext
         textarea(cols='50' rows='15' name='content' placeholder='Hier kommt der Artikeltext')= article.content
         input(type='submit' value='Save')
+        input(type='button' value='Cancel')
+        .clearfix
