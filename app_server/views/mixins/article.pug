@@ -18,7 +18,7 @@ mixin article(article, isFullArticle)
           a(href=article.category)= article.category
       hr
       if isFullArticle
-        p= article.content
+        p!= article.content
       else
-        p= article.content
+        p!= article.content
         a.button(href=article.category + '/' +article.slug) Weiterlesen...

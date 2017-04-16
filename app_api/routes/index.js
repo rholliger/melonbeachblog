@@ -23,6 +23,9 @@ router.put('/articles/:articleId', articleController.updateArticle);
 // Delete an article via article ID
 router.delete('/articles/:articleId', articleController.deleteArticle);
 
+// Test for active state
+router.put('/articles/:articleId/active', articleController.setActiveState);
+
 /* ======== */
 
 /* ==== Categories ==== */
@@ -51,6 +54,9 @@ router.get('/media/:mediaId', mediaController.getMediaFile);
 
 // Create / upload a new media file
 router.post('/media', mediaController.uploadMediaFile);
+
+// Edit the media file
+router.put('/media/:mediaId', mediaController.editMediaFile);
 
 // Delete a media file via media ID
 router.delete('/media/:mediaId', mediaController.deleteMediaFile);

@@ -4,20 +4,19 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1')
     title= title
     link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/styles/vendor/sweetalert.css')
     link(rel='stylesheet', href='/styles/style.css')
   body
-    .wrapper
-      #logo-container
-        a(href='/')
-          #logo.center-block
-          h1
-            span.green Melon
-            span.orange Beach
-            span.blue Blog
+    #blog
+      .wrapper
+        #logo-container
+          a(href='/')
+            #logo.center-block
+            h1
+              span.green Melon
+              span.orange Beach
+              span.blue Blog
 
-      block content
+        block content
 
     script(src='/javascripts/vendor/jquery-3.1.1.min.js')
-    script(src='/javascripts/vendor/sweetalert.min.js')
     script(src='/javascripts/main.js')

@@ -7,17 +7,15 @@ html
     link(rel='stylesheet', href='/styles/style.css')
     link(rel='stylesheet', href='/styles/vendor/sweetalert2.css')
   body
-    #admin
+    .admin
       .wrapper
         #sidebar
           #admin-logo-container
             #small-logo
 
           nav
-            -var menu = { 'articles': { name: 'Articles', url: '/admin/articles', icon: 'edit' }, 'media': { name: 'Media', url: '/admin/media', icon: 'picture' }, 'settings': { name: 'Settings', url: '/admin/settings', icon: 'cog' } }
-
             ul
-              each value, key in menu
+              each value, key in navigation
                 li(class= type === key ? 'active' : '')
                   a(href=value.url)
                     span(class='glyphicon glyphicon-'+value.icon)
@@ -38,4 +36,5 @@ html
 
     script(src='/javascripts/vendor/jquery-3.1.1.min.js')
     script(src='/javascripts/vendor/sweetalert2.min.js')
+    script(src='/tinymce/tinymce.min.js')
     script(src='/javascripts/main.js')

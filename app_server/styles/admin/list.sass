@@ -4,6 +4,28 @@
     // border-bottom: 3px solid $lightGreen
     border-bottom: 1px solid #d8d8d8
 
+
+    /* -- test -- */
+
+    .preview
+      position: relative
+
+      img
+        position: relative
+
+      span
+        position: absolute
+        right: 3px
+        bottom: 3px
+        top: auto
+        color: white
+        font-size: 30px
+
+    /* --- */
+
+    img
+      width: 200px
+
     table
       width: 100%
       color: $darkGrey
@@ -50,19 +72,24 @@
             padding: 10px 20px
 
             &:first-child
-              width: 10%
+              width: 6%
+
+              .toggle
+                + label
+                  margin: 0
+                  vertical-align: middle
 
             &:nth-child(2)
-              width: 14%
+              width: 20%
 
             &:nth-child(3)
-              width: 30%
+              width: 20%
 
             &:nth-child(4)
-              width: 36%
+              width: 40%
 
             &:nth-child(5)
-              width: 10%
+              width: 14%
 
             &.options
               text-align: right

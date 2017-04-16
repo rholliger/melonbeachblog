@@ -1,0 +1,14 @@
+extends ../index
+
+block adminContent
+  #media
+    .header
+      h1 Upload Media
+    
+    .creation
+      form(name='upload')
+        label(for='file') Datei
+        input#file(type='file' name='mediaUpload' placeholder='Datei Hochladen')
+        input(type='submit' value='Upload')
+        a.button.cancel(href='../') Cancel
+        .clearfix

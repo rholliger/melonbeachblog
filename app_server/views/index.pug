@@ -5,4 +5,5 @@ include mixins/article
 block content
   #articles-container.center-block
     each article in articles
-      +article(article)
+      if article.active
+        +article(article)

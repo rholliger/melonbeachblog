@@ -86,6 +86,31 @@ module.exports.uploadMediaFile = function(req, res) {
   });
 };
 
+module.exports.editMediaFile = function(req, res) {
+  if (req.params && req.params.mediaId) {
+    Media.findByIdAndUpdate(req.params.mediaId, {
+      name: req.body.name,
+      description: req.body.description
+    }, function(err, media) {
+      if (err) {
+        utils.sendJSONResponse(res, 400, {
+          'message': err
+        });
+      } else if (!media) {
+        utils.sendJSONResponse(res, 404, {
+          'message': 'No corresponding media found with this mediaId'
+        });
+      } else {
+        utils.sendJSONResponse(res, 200, media);
+      }
+    });
+  } else {
+    utils.sendJSONResponse(res, 404, {
+      'message': 'No mediaId found in request'
+    });
+  }
+};
+
 module.exports.deleteMediaFile = function(req, res) {
   if (req.params && req.params.mediaId) {
     Media.findByIdAndRemove(req.params.mediaId, function(err, media) {
@@ -98,6 +123,10 @@ module.exports.deleteMediaFile = function(req, res) {
           'message': 'No corresponding media file found with this mediaId'
         });
       } else {
+        // Also delete the media file on the server
+        fs.unlink(uploadDestination + media.fileName, function(err) {
+          if (err) throw err;
+        });
         utils.sendJSONResponse(res, 204, null);
       }
     });

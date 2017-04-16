@@ -1,12 +1,16 @@
 var moment = require('moment');
 
+module.exports.apiOptions = {
+  serverUrl: 'http://localhost:3000/api'
+};
+
 module.exports.capitalize = function(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 module.exports.formatDate = function(date, format) {
   var dateFormat = format ? format : 'DD. MMMM YYYY';
-  return moment(date).utc().format(dateFormat);
+  return moment(date).format(dateFormat);
 }
 
 module.exports.createExcerpt = function(text, charLength) {

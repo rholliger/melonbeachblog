@@ -1,110 +1,15 @@
 @import 'colors'
 @import 'fonts'
-@import 'admin/admin'
 
 body
   background-color: $lightGrey
 
-  h1, h2, h3, h4, small
-    margin: 0
+h1, h2, h3, h4, small
+  margin: 0
 
-  a
-    color: $green
+a
+  &:hover
+    text-decoration: none
 
-    &:hover
-      color: $orange
-      text-decoration: none
-
-    &:visited, &:focus
-      color: $green
-      text-decoration: none
-
-  .button
-    font-family: 'Oswald-Light'
-    text-transform: uppercase
-    font-size: 16px
-    background-color: white
-    border: 2px solid $green
-    padding: 8px 12px
-    color: $green
-
-    &:hover
-      background-color: $green
-      color: white
-
-  .wrapper
-    #logo-container
-      width: 300px
-      margin: 40px auto
-
-      #logo
-        background-image: url('../images/logo@2x.png')
-        background-size: 300px 92px
-        width: 100%
-        height: 92px
-
-      h1
-        text-align: center
-        font-family: 'Montserrat-Regular'
-        font-weight: normal
-        font-size: 26px
-        margin-top: 20px
-
-        .green
-          color: $green
-
-        .orange
-          color: $orange
-
-        .blue
-          color: $blue
-
-  .center-block
-    max-width: 630px
-
-  #articles-container
-    article
-      margin-bottom: 80px
-
-      .image-container
-        border-bottom: 6px solid $green
-
-      .text-container
-        background-color: white
-        padding: 0 30px 30px
-
-        .title-container
-          text-align: center
-
-          h1, h2, h3, h4
-            font-family: 'Oswald-Regular'
-            font-weight: normal
-            text-transform: uppercase
-
-          h2, h3, h4
-            font-family: 'Oswald-Light'
-            font-weight: normal
-            color: $lightGrey
-
-          h1
-            padding-top: 2px
-            color: $green
-            letter-spacing: 0.5px
-
-          h2
-            padding-top: 16px
-            font-size: 16px
-
-          h3
-            padding-top: 14px
-            font-size: 12px
-
-        p
-          font-family: 'Palanquin-Light'
-          font-weight: normal
-          font-size: 16px
-          color: $darkerGrey
-
-        .button
-          display: inline-block
-
+@import 'admin/admin'
+@import 'frontend/style'

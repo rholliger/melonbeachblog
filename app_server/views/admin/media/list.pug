@@ -1,6 +1,37 @@
 extends ../index
 
 block adminContent
-  .list
-    h1 Media
-    h2 Hier kommt die Medialiste
+  #media
+    .header
+      h1.pull-left Media
+      a.create.pull-right(href='upload/')
+        span.glyphicon.glyphicon-plus
+      .clearfix
+
+    .list
+      table
+        thead
+          tr
+            //- th Active
+            th Date
+            th Preview
+            th Name
+            th Description
+            th
+
+        tbody
+          each mediaFile in media
+            tr
+              td= mediaFile.createdDate
+              td
+                div.preview
+                  img(src='/uploads/'+mediaFile.fileName)
+                  span.glyphicon.glyphicon-picture
+              td= mediaFile.name ? mediaFile.name : mediaFile.fileName
+              td= mediaFile.description ? mediaFile.description : '(empty)'
+              td.options
+                //- TODO: Do we need to edit a media file?
+                //- a.edit(href='edit/'+mediaFile._id+'/')
+                //-   span.glyphicon.glyphicon-pencil
+                a.delete(href='delete/'+mediaFile._id+'/')
+                  span.glyphicon.glyphicon-remove

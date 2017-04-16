@@ -1,0 +1,16 @@
+extends ../index
+
+block adminContent
+  #media
+    .header
+      h1 Edit Media
+    
+    .creation
+      form(name='edit')
+        label(for='name') Name
+        input#name(type='text' name='name' placeholder='Name eingeben')
+        label(for='description') Description
+        input#description(type='text' name='description' placeholder='Beschreibung eingeben')
+        input(type='submit' value='Save')
+        a.button.cancel(href='../') Cancel
+        .clearfix

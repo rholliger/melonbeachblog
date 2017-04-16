@@ -9,6 +9,11 @@ var mediaElementSchema = new Schema({
 });
 
 var articleSchema = new Schema({
+  active: {
+    type: Boolean,
+    required: true,
+    'default': false
+  },
   title: {
     type: String,
     required: true

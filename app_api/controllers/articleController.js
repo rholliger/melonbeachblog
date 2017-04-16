@@ -91,6 +91,7 @@ function createSlugFromTitle(title) {
 
 module.exports.createArticle = function(req, res) {
   Article.create({
+    active: req.body.active,
     title: req.body.title,
     slug: req.body.slug ? req.body.slug : createSlugFromTitle(req.body.title),
     // author: req.body.author,
@@ -158,3 +159,27 @@ module.exports.deleteArticle = function(req, res) {
     });
   }
 };
+
+module.exports.setActiveState = function(req, res) {
+  if (req.params && req.params.articleId) {
+    Article.findByIdAndUpdate(req.params.articleId, {
+      active: req.body.active
+    }, function(err, article) {
+      if (err) {
+        utils.sendJSONResponse(res, 400, {
+          'message': err
+        });
+      } else if (!article) {
+        utils.sendJSONResponse(res, 404, {
+          'message': 'No corresponding article found with this articleId'
+        });
+      } else {
+        utils.sendJSONResponse(res, 200, article);
+      }
+    });
+  } else {
+    utils.sendJSONResponse(res, 404, {
+      'message': 'No articleId found in request'
+    });
+  }
+}

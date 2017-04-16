@@ -2,6 +2,12 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var mediaSchema = new Schema({
+  name: String,
+  description: String,
+  createdDate: {
+    type: Date,
+    'default': Date.now
+  },
   fileName: {
     type: String,
     required: true

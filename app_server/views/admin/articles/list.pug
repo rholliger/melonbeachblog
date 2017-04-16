@@ -4,7 +4,7 @@ block adminContent
   #articles
     .header
       h1.pull-left Articles
-      a.createArticle.pull-right(href='articles/create')
+      a.create.pull-right(href='create/')
         span.glyphicon.glyphicon-plus
       .clearfix
 
@@ -12,21 +12,25 @@ block adminContent
       table
         thead
           tr
+            th Active
             th Date
             th Category
             th Title
-            th Content
             th
 
         tbody
+          - var i = 1;
           each article in articles
             tr
+              td
+                input.toggle(type='checkbox' id='activeToggle'+i+'' data-id=article._id checked= article.active ? 'checked' : undefined)
+                label(for='activeToggle'+i)
               td= article.createdDate
               td= article.category
               td= article.title
-              td= article.content
               td.options
-                a.edit(href='/admin/articles/edit/'+article._id)
+                a.edit(href='edit/'+article._id+'/')
                   span.glyphicon.glyphicon-pencil
-                a.delete(href='/admin/articles/delete/'+article._id)
+                a.delete(href='delete/'+article._id+'/')
                   span.glyphicon.glyphicon-remove
+            - i++;
