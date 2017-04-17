@@ -3,3 +3,79 @@
     form
       select
         display: block
+
+    .mediaChooser
+      margin: 0 auto
+      width: 400px
+      border: 1px solid $darkGreen
+      padding: 10px
+
+      input
+        display: none
+      
+      label
+        width: 184px
+        float: left
+        margin: 0
+        background-color: $lightGreen
+        height: 80px
+        text-align: center
+        cursor: pointer
+
+        &:first-child
+          margin-right: 10px
+
+        &:hover
+          background-color: $buttonHover
+
+        >span
+          position: relative
+          color: white
+          top: 12px
+
+          span
+            &:first-child
+              font-size: 30px
+
+    .mediaElement
+      display: none
+      margin: 10px 0
+
+      .imageContainer,
+      .inputContainer
+        float: left
+
+      .imageContainer
+        position: relative
+        width: 30%
+
+        &:hover
+          .iconContainer
+            display: block
+
+        img
+          position: relative
+          width: 100%
+          padding-right: 10px
+
+        .iconContainer
+          display: none
+          position: absolute
+          background-color: black
+          bottom: 0
+          right: 10px
+          padding: 4px 6px
+
+          .glyphicon
+            color: white
+            font-size: 20px
+
+            &:first-child
+              margin-right: 6px
+
+      .inputContainer
+        width: 70%
+
+        input
+          margin: 0 0 10px 0
+

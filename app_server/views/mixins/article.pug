@@ -2,10 +2,12 @@ mixin article(article, isFullArticle)
   article
     .image-container
       if isFullArticle
-        img.img-responsive(src='http://placehold.it/630x343')
+        if article.mediaElement
+          img.img-responsive(src='/uploads/'+article.mediaElement.mediaFile.fileName)
       else
         a(href=article.category + '/' +article.slug)
-          img.img-responsive(src='http://placehold.it/630x343')
+          if article.mediaElement
+            img.img-responsive(src='/uploads/'+article.mediaElement.mediaFile.fileName)
     .text-container
       .title-container
         h2= article.createdDate

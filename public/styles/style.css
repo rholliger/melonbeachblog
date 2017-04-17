@@ -210,6 +210,8 @@ form {
     float: right; }
   form a.button {
     margin-right: 10px; }
+  form input[type='file'] {
+    display: none; }
 
 .alert button:first-child {
   margin-right: 8px; }
@@ -369,6 +371,63 @@ form {
                 font-size: 20px; }
     .admin .wrapper #content #articles .creation form select, .admin .wrapper #content #media .creation form select {
       display: block; }
+    .admin .wrapper #content #articles .creation .mediaChooser, .admin .wrapper #content #media .creation .mediaChooser {
+      margin: 0 auto;
+      width: 400px;
+      border: 1px solid #659057;
+      padding: 10px; }
+      .admin .wrapper #content #articles .creation .mediaChooser input, .admin .wrapper #content #media .creation .mediaChooser input {
+        display: none; }
+      .admin .wrapper #content #articles .creation .mediaChooser label, .admin .wrapper #content #media .creation .mediaChooser label {
+        width: 184px;
+        float: left;
+        margin: 0;
+        background-color: #8AB57B;
+        height: 80px;
+        text-align: center;
+        cursor: pointer; }
+        .admin .wrapper #content #articles .creation .mediaChooser label:first-child, .admin .wrapper #content #media .creation .mediaChooser label:first-child {
+          margin-right: 10px; }
+        .admin .wrapper #content #articles .creation .mediaChooser label:hover, .admin .wrapper #content #media .creation .mediaChooser label:hover {
+          background-color: #90C07F; }
+        .admin .wrapper #content #articles .creation .mediaChooser label > span, .admin .wrapper #content #media .creation .mediaChooser label > span {
+          position: relative;
+          color: white;
+          top: 12px; }
+          .admin .wrapper #content #articles .creation .mediaChooser label > span span:first-child, .admin .wrapper #content #media .creation .mediaChooser label > span span:first-child {
+            font-size: 30px; }
+    .admin .wrapper #content #articles .creation .mediaElement, .admin .wrapper #content #media .creation .mediaElement {
+      display: none;
+      margin: 10px 0; }
+      .admin .wrapper #content #articles .creation .mediaElement .imageContainer,
+      .admin .wrapper #content #articles .creation .mediaElement .inputContainer, .admin .wrapper #content #media .creation .mediaElement .imageContainer,
+      .admin .wrapper #content #media .creation .mediaElement .inputContainer {
+        float: left; }
+      .admin .wrapper #content #articles .creation .mediaElement .imageContainer, .admin .wrapper #content #media .creation .mediaElement .imageContainer {
+        position: relative;
+        width: 30%; }
+        .admin .wrapper #content #articles .creation .mediaElement .imageContainer:hover .iconContainer, .admin .wrapper #content #media .creation .mediaElement .imageContainer:hover .iconContainer {
+          display: block; }
+        .admin .wrapper #content #articles .creation .mediaElement .imageContainer img, .admin .wrapper #content #media .creation .mediaElement .imageContainer img {
+          position: relative;
+          width: 100%;
+          padding-right: 10px; }
+        .admin .wrapper #content #articles .creation .mediaElement .imageContainer .iconContainer, .admin .wrapper #content #media .creation .mediaElement .imageContainer .iconContainer {
+          display: none;
+          position: absolute;
+          background-color: black;
+          bottom: 0;
+          right: 10px;
+          padding: 4px 6px; }
+          .admin .wrapper #content #articles .creation .mediaElement .imageContainer .iconContainer .glyphicon, .admin .wrapper #content #media .creation .mediaElement .imageContainer .iconContainer .glyphicon {
+            color: white;
+            font-size: 20px; }
+            .admin .wrapper #content #articles .creation .mediaElement .imageContainer .iconContainer .glyphicon:first-child, .admin .wrapper #content #media .creation .mediaElement .imageContainer .iconContainer .glyphicon:first-child {
+              margin-right: 6px; }
+      .admin .wrapper #content #articles .creation .mediaElement .inputContainer, .admin .wrapper #content #media .creation .mediaElement .inputContainer {
+        width: 70%; }
+        .admin .wrapper #content #articles .creation .mediaElement .inputContainer input, .admin .wrapper #content #media .creation .mediaElement .inputContainer input {
+          margin: 0 0 10px 0; }
 
 #blog a {
   color: #8AB57B; }

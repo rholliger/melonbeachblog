@@ -1,5 +1,6 @@
 var utils = require('../libs/utils');
 var Article = require('../models/articles');
+var Media = require('../models/media').Model;
 
 function getArticleFromSlug(slug, res) {
   Article.findOne({ slug: slug }, function(err, article) {
@@ -89,14 +90,15 @@ function createSlugFromTitle(title) {
     .replace(/-+$/, '');
 }
 
-module.exports.createArticle = function(req, res) {
+function saveArticle(req, res, mediaElement) {
   Article.create({
     active: req.body.active,
     title: req.body.title,
     slug: req.body.slug ? req.body.slug : createSlugFromTitle(req.body.title),
     // author: req.body.author,
     category: req.body.category,
-    content: req.body.content
+    content: req.body.content,
+    mediaElement: mediaElement
   }, function(err, article) {
     if (err) {
       utils.sendJSONResponse(res, 400, {
@@ -109,6 +111,32 @@ module.exports.createArticle = function(req, res) {
       utils.sendJSONResponse(res, 201, null);
     }
   });
+}
+
+module.exports.createArticle = function(req, res) {
+  if (req.body.mediaElement) {
+    console.log('mediaElement', req.body.mediaElement);
+    Media.findById(req.body.mediaElement.id, function(err, media) {
+      if (err) {
+        utils.sendJSONResponse(res, 400, {
+          'message': err
+        });  
+      } else if (!media) {
+        utils.sendJSONResponse(res, 404, {
+          'message': 'No corresponding media file found with this mediaId'
+        });
+      } else {
+        const mediaElement = {
+          name: req.body.mediaElement.name,
+          caption: req.body.mediaElement.caption,
+          mediaFile: media
+        }
+        saveArticle(req, res, mediaElement);
+      }
+    });
+  } else {
+    saveArticle(req, res, null);
+  } 
 };
 
 module.exports.updateArticle = function(req, res) {

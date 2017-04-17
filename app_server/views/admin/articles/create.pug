@@ -7,6 +7,31 @@ block adminContent
     
     .creation
       form(name='create')
+        label TopElement / Media
+        div.mediaChooser
+          label(for='topelement')
+            span
+              span.glyphicon.glyphicon-cloud-upload
+              br
+              span Upload
+          input#topelement(type='file' name='mediaUpload' placeholder='Mediendatei hochladen')
+          label(for='choose')
+            span
+              span.glyphicon.glyphicon-folder-open
+              br
+              span Choose
+          input#choose(type='button' name='choose' value='Choose...')
+          .clearfix
+        div.mediaElement
+          div.imageContainer
+            img(src='')
+            span.iconContainer
+              a.glyphicon.glyphicon-refresh(href='')
+              a.glyphicon.glyphicon-remove-circle(href='')
+          div.inputContainer
+            input(type='text' name='mediaName' placeholder='Mediennamen eingeben')
+            input(type='text' name='mediaCaption' placeholder='Medienbeschreibung eingeben')
+          .clearfix
         label(for='title') Titel
         input#title(type='text' name='title' placeholder='Titel eingeben')
         label(for='slug') Slug

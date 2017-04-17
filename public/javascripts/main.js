@@ -39,7 +39,17 @@ $('#articles form').submit(function(e) {
   console.log('submitted', $(this).attr('name'));
   var type = $(this).attr('name');
 
+  var mediaElement = null;
+  if ($(this).find('.mediaElement').attr('id') !== undefined) {
+    mediaElement = {
+      id: $(this).find('.mediaElement').attr('id'),
+      name: $(this).find('input[name="mediaName"]').val(),
+      caption: $(this).find('input[name="mediaCaption"]').val()
+    }
+  }
+
   var data = {
+    mediaElement: mediaElement,
     title: $(this).find('input[name="title"]').val(),
     slug: $(this).find('input[name="slug"]').val(),
     category: $(this).find('select').val(),
@@ -54,7 +64,8 @@ $('#articles form').submit(function(e) {
       // window.location.replace('/admin' + location);
       window.location.replace('/admin/articles/');
     }, function(jqXHR, status, error) {
-      console.log(JSON.parse(jqXHR.responseText));
+      console.log(jqXHR, status, error);
+      // console.log(JSON.parse(jqXHR.responseText));
     });
   } else {
     var path = window.location.pathname.split('/');
@@ -65,6 +76,37 @@ $('#articles form').submit(function(e) {
       console.log(JSON.parse(jqXHR.responseText));
     });
   }
+});
+
+$('#articles form #topelement').on('change', function(e) {
+  var fileSelect = $(this);
+  var files = fileSelect[0].files;
+
+  console.log('files', files[0]);
+
+  var formData = new FormData();
+
+  for (var i = 0; i < files.length; i++) {
+    var file = files[i];
+
+    formData.append('mediaUpload', file);
+  }
+
+  $.ajax({
+    url: ajaxSettings.url + '/media',
+    data: formData,
+    cache: false,
+    contentType: false,
+    processData: false,
+    type: 'POST',
+    success: function(media) {
+      console.log('media', media);
+      $('#articles form .mediaElement .imageContainer img').attr('src', '/uploads/'+media.fileName);
+      $('#articles form .mediaElement').attr('id', media._id);
+      $('#articles form .mediaElement').show();
+      $('#articles form .mediaChooser').hide();
+    }
+  });
 });
 
 $('#media form').submit(function(e) {

@@ -16,6 +16,9 @@ function requestArticles(path, callback) {
       for (data of body) {
         data.content = utils.createExcerpt(data.content, 600);
         data.createdDate = utils.formatDate(data.createdDate);
+        if (data.mediaElement) {
+          console.log('blublu', data.mediaElement.mediaFile.fileName);
+        }
       }
     } else {
       body.createdDate = utils.formatDate(body.createdDate);
