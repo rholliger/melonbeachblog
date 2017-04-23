@@ -3,10 +3,37 @@ extends ../index
 block adminContent
   #articles
     .header
-        h1 Edit Article
+      h1 Edit Article
     
     .edit
       form(name='edit')
+        label TopElement / Media
+        unless article.mediaElement
+          div.mediaChooser
+            label(for='topelement')
+              span
+                span.glyphicon.glyphicon-cloud-upload
+                br
+                span Upload
+            input#topelement(type='file' name='mediaUpload' placeholder='Mediendatei hochladen')
+            label(for='choose')
+              span
+                span.glyphicon.glyphicon-folder-open
+                br
+                span Choose
+            input#choose(type='button' name='choose' value='Choose...')
+            .clearfix
+        else
+          div.mediaElement
+            div.imageContainer
+              img(src='/uploads/'+article.mediaElement.mediaFile.fileName)
+              span.iconContainer
+                a.glyphicon.glyphicon-refresh(href='')
+                a.glyphicon.glyphicon-remove-circle(href='')
+            div.inputContainer
+              input(type='text' name='mediaName' value=article.mediaElement.name placeholder='Mediennamen eingeben')
+              input(type='text' name='mediaCaption' value=article.mediaElement.caption placeholder='Medienbeschreibung eingeben')
+            .clearfix
         label(for='title') Titel
         input#title(type='text' name='title' value=article.title placeholder='Titel eingeben')
         label(for='slug') Slug

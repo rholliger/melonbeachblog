@@ -6,6 +6,28 @@ var Media = require('../models/media').Model;
 // Multer configuration
 var uploadDestination = './public/uploads/'
 
+// Regular expression for checking the mime types
+const ALLOWED_MIMETYPES = /(image\/(jpe?g|png|gif))|(video\/(mp4|quicktime|ogg|x-msvideo|avi|mpeg|webm))|(application\/pdf)/g
+
+// Own specific error for detecting if the client sent an unsupported media type (mime-type) to the server
+function WrongMediaTypeError(message) {
+  this.name = 'WrongMediaTypeError';
+  this.message = message || 'This media type is not allowed';
+  this.stack = (new Error()).stack;
+}
+WrongMediaTypeError.prototype = Object.create(Error.prototype);
+WrongMediaTypeError.prototype.constructor = WrongMediaTypeError;
+
+// This file filter checks if the client sent an allowed mime type
+var fileFilter = function(req, file, cb) {
+  if (file.mimetype.match(ALLOWED_MIMETYPES)) {
+    console.log(file);
+    cb(null, true);
+  } else {
+    return cb(new WrongMediaTypeError(), false);
+  }
+}
+
 var storage = multer.diskStorage({
   destination: function(req, file, cb) {
     cb(null, uploadDestination);
@@ -19,10 +41,10 @@ var storage = multer.diskStorage({
 var upload = multer({ 
   storage: storage,
   limits: {
-    fileSize: 10000000 // Limited file size to 10MB
-  }
+    fileSize: 40000000 // Limited file size to 40MB
+  },
+  fileFilter: fileFilter
 }).single('mediaUpload');
-
 
 module.exports.getMediaFiles = function(req, res) {
   Media.find({}, function(err, articles) {
@@ -61,9 +83,15 @@ module.exports.getMediaFile = function(req, res) {
 module.exports.uploadMediaFile = function(req, res) {
   upload(req, res, function(err) {
     if (err) {
-      utils.sendJSONResponse(res, 400, {
-        'message': err
-      });
+      if (err instanceof WrongMediaTypeError) {
+        utils.sendJSONResponse(res, 415, { // 415 - Unsupported Media Type correct here? Or is it a 422 Unprocessable Entity?
+          'message': err.message
+        });
+      } else {
+        utils.sendJSONResponse(res, 400, {
+          'message': err
+        });
+      }
       return;
     } else {
       Media.create({

@@ -136,7 +136,7 @@ $('#media form').submit(function(e) {
       processData: false,
       type: 'POST',
       success: function(data) {
-        window.location.replace('/admin/media/edit/'+data._id+'/');
+        window.location.replace('/admin/media/');
       }
     });
   } else {
