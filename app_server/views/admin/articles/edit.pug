@@ -47,6 +47,7 @@ block adminContent
                 option(value=category.name.toLowerCase())= category.name
         label(for='content') Artikeltext
         textarea(cols='50' rows='15' name='content' placeholder='Hier kommt der Artikeltext')= article.content
-        input(type='submit' value='Save')
-        a.button.cancel(href='../../') Cancel
+        .buttonGroup
+          a.button.cancel(href='../../') Cancel
+          input.button(type='submit' value='Save')
         .clearfix

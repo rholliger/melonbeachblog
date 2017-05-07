@@ -7,8 +7,18 @@ block adminContent
     
     .creation
       form(name='upload')
-        label(for='file') Datei
-        input#file(type='file' name='mediaUpload' placeholder='Datei Hochladen')
-        input(type='submit' value='Upload')
-        a.button.cancel(href='../') Cancel
+        //- label(for='file') Datei
+        //- input#file(type='file' name='mediaUpload' placeholder='Datei Hochladen')
+        #uploadZone.mediaChooser
+          .uploadButtonContainer
+            label(for='uploadButton')
+              span
+                span.glyphicon.glyphicon-cloud-upload
+                br
+                span Upload
+            input#uploadButton(type='file' name='mediaUpload' placeholder='Mediendatei hochladen')
+            p.info or drop the image here
+        .buttonGroup
+          a.button.cancel(href='../') Cancel
+          input.button(type='submit' value='Upload')
         .clearfix

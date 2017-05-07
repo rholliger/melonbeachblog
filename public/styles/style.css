@@ -80,46 +80,46 @@ p, input, textarea, table {
   display: block;
   text-align: center; }
 
-.admin a.button,
+.admin .button,
 .admin input[type='button'],
 .admin input[type='submit'],
 .admin input[type='reset'],
-.alert a.button,
+.alert .button,
 .alert input[type='button'],
 .alert input[type='submit'],
 .alert input[type='reset'] {
-  width: 140px;
+  min-width: 100px;
   padding: 8px;
   background-color: #8AB57B;
   border: 1px solid #8AB57B;
   border-radius: 3px;
   color: white;
   outline: 0; }
-  .admin a.button:hover,
+  .admin .button:hover,
   .admin input[type='button']:hover,
   .admin input[type='submit']:hover,
   .admin input[type='reset']:hover,
-  .alert a.button:hover,
+  .alert .button:hover,
   .alert input[type='button']:hover,
   .alert input[type='submit']:hover,
   .alert input[type='reset']:hover {
     background-color: #90C07F; }
-  .admin a.button.cancel,
+  .admin .button.cancel,
   .admin input[type='button'].cancel,
   .admin input[type='submit'].cancel,
   .admin input[type='reset'].cancel,
-  .alert a.button.cancel,
+  .alert .button.cancel,
   .alert input[type='button'].cancel,
   .alert input[type='submit'].cancel,
   .alert input[type='reset'].cancel {
     background-color: white;
     border: 1px solid #BC2E42;
     color: #BC2E42; }
-    .admin a.button.cancel:hover,
+    .admin .button.cancel:hover,
     .admin input[type='button'].cancel:hover,
     .admin input[type='submit'].cancel:hover,
     .admin input[type='reset'].cancel:hover,
-    .alert a.button.cancel:hover,
+    .alert .button.cancel:hover,
     .alert input[type='button'].cancel:hover,
     .alert input[type='submit'].cancel:hover,
     .alert input[type='reset'].cancel:hover {
@@ -181,10 +181,10 @@ p, input, textarea, table {
 
 form {
   background-color: white;
-  padding: 16px 20px;
+  padding: 16px;
   border-top: 2px solid #8AB57B;
   border-bottom: 1px solid #dadada; }
-  form input, form select, form textarea {
+  form input[type='text'], form select, form textarea {
     margin: 5px 0 5px 0; }
   form input, form textarea {
     display: block;
@@ -206,12 +206,30 @@ form {
   form button,
   form input[type='button'],
   form input[type='submit'] {
-    margin: 16px 0 8px 0;
     float: right; }
   form a.button {
     margin-right: 10px; }
   form input[type='file'] {
     display: none; }
+  form .errorInput {
+    border: 1px solid #A94442; }
+    form .errorInput:focus {
+      border: 1px solid #A94442;
+      box-shadow: 0px 0px 2px #A94442;
+      transition: border 400ms ease-out, box-shadow 400ms ease-out; }
+  form .error {
+    color: #A94442;
+    display: none; }
+    form .error p {
+      margin: 0; }
+  form .buttonGroup {
+    margin-top: 16px;
+    float: right; }
+    form .buttonGroup .button {
+      width: 100px;
+      float: left; }
+      form .buttonGroup .button:first-child {
+        margin-right: 8px; }
 
 .alert button:first-child {
   margin-right: 8px; }
@@ -369,8 +387,30 @@ form {
                 cursor: pointer;
                 padding-left: 10px;
                 font-size: 20px; }
+    .admin .wrapper #content #articles .creation .alert, .admin .wrapper #content #articles .edit .alert, .admin .wrapper #content #media .creation .alert, .admin .wrapper #content #media .edit .alert {
+      display: none; }
     .admin .wrapper #content #articles .creation form select, .admin .wrapper #content #articles .edit form select, .admin .wrapper #content #media .creation form select, .admin .wrapper #content #media .edit form select {
       display: block; }
+    .admin .wrapper #content #articles .creation #uploadZone, .admin .wrapper #content #articles .edit #uploadZone, .admin .wrapper #content #media .creation #uploadZone, .admin .wrapper #content #media .edit #uploadZone {
+      width: 600px;
+      height: 300px;
+      margin: 32px auto;
+      border: 2px dashed #8AB57B;
+      position: relative; }
+      .admin .wrapper #content #articles .creation #uploadZone.dragOver, .admin .wrapper #content #articles .edit #uploadZone.dragOver, .admin .wrapper #content #media .creation #uploadZone.dragOver, .admin .wrapper #content #media .edit #uploadZone.dragOver {
+        padding: 20px;
+        border: 2px solid #8AB57B;
+        background-color: rgba(138, 181, 123, 0.1); }
+      .admin .wrapper #content #articles .creation #uploadZone .uploadButtonContainer, .admin .wrapper #content #articles .edit #uploadZone .uploadButtonContainer, .admin .wrapper #content #media .creation #uploadZone .uploadButtonContainer, .admin .wrapper #content #media .edit #uploadZone .uploadButtonContainer {
+        width: 184px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+        .admin .wrapper #content #articles .creation #uploadZone .uploadButtonContainer label, .admin .wrapper #content #articles .edit #uploadZone .uploadButtonContainer label, .admin .wrapper #content #media .creation #uploadZone .uploadButtonContainer label, .admin .wrapper #content #media .edit #uploadZone .uploadButtonContainer label {
+          float: none; }
+        .admin .wrapper #content #articles .creation #uploadZone .uploadButtonContainer p, .admin .wrapper #content #articles .edit #uploadZone .uploadButtonContainer p, .admin .wrapper #content #media .creation #uploadZone .uploadButtonContainer p, .admin .wrapper #content #media .edit #uploadZone .uploadButtonContainer p {
+          text-align: center; }
     .admin .wrapper #content #articles .creation .mediaChooser, .admin .wrapper #content #articles .edit .mediaChooser, .admin .wrapper #content #media .creation .mediaChooser, .admin .wrapper #content #media .edit .mediaChooser {
       margin: 0 auto;
       width: 400px;
@@ -423,9 +463,8 @@ form {
           padding: 4px 6px; }
           .admin .wrapper #content #articles .creation .mediaElement .imageContainer .iconContainer .glyphicon, .admin .wrapper #content #articles .edit .mediaElement .imageContainer .iconContainer .glyphicon, .admin .wrapper #content #media .creation .mediaElement .imageContainer .iconContainer .glyphicon, .admin .wrapper #content #media .edit .mediaElement .imageContainer .iconContainer .glyphicon {
             color: white;
-            font-size: 20px; }
-            .admin .wrapper #content #articles .creation .mediaElement .imageContainer .iconContainer .glyphicon:first-child, .admin .wrapper #content #articles .edit .mediaElement .imageContainer .iconContainer .glyphicon:first-child, .admin .wrapper #content #media .creation .mediaElement .imageContainer .iconContainer .glyphicon:first-child, .admin .wrapper #content #media .edit .mediaElement .imageContainer .iconContainer .glyphicon:first-child {
-              margin-right: 6px; }
+            font-size: 20px;
+            vertical-align: sub; }
       .admin .wrapper #content #articles .creation .mediaElement .inputContainer, .admin .wrapper #content #articles .edit .mediaElement .inputContainer, .admin .wrapper #content #media .creation .mediaElement .inputContainer, .admin .wrapper #content #media .edit .mediaElement .inputContainer {
         width: 70%; }
         .admin .wrapper #content #articles .creation .mediaElement .inputContainer input, .admin .wrapper #content #articles .edit .mediaElement .inputContainer input, .admin .wrapper #content #media .creation .mediaElement .inputContainer input, .admin .wrapper #content #media .edit .mediaElement .inputContainer input {

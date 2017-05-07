@@ -8,6 +8,8 @@ block adminContent
         span.glyphicon.glyphicon-plus
       .clearfix
 
+    if alertMessage
+      .alert(class='alert-'+alertMessage.type)= alertMessage.message
     .list
       table
         thead

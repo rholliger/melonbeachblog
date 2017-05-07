@@ -1,5 +1,7 @@
 var fs = require('fs');
 var multer = require('multer');
+var flash = require('connect-flash');
+var appUtils = require('../../appUtils');
 var utils = require('../libs/utils');
 var Media = require('../models/media').Model;
 
@@ -107,6 +109,7 @@ module.exports.uploadMediaFile = function(req, res) {
             'message': err
           });
         } else {
+          appUtils.setToastMessage(req, 'success', 'The media file was uploaded successfully!');
           utils.sendJSONResponse(res, 201, media);
         }
       });

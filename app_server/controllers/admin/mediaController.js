@@ -1,4 +1,6 @@
+var util = require('util');
 var request = require('request');
+var appUtils = require('../../../appUtils');
 var utils = require('../../libs/utils');
 
 // Show all media files from the file system and present them in the article list view
@@ -9,14 +11,14 @@ module.exports.showMediaList = function(req, res) {
     json: {}
   }, function(err, response, body) {
     for (data of body) {
-      console.log('asdsad', data.createdDate);
       data.createdDate = utils.formatDate(data.createdDate, 'DD.MM.YYYY hh:mm');
     }
 
     res.render('admin/media/list', { 
       title: 'MelonBeach Blog Article asdasd',
       type: 'media',
-      media: body
+      media: body,
+      alertMessage: appUtils.getToastMessage(req)
     });
   });
 };
@@ -51,6 +53,16 @@ module.exports.deleteMedia = function(req, res) {
     url: utils.apiOptions.serverUrl + '/media/' + req.params.mediaId,
     method: 'DELETE',
   }, function(err, response, body) {
+    if (response.statusCode === 204) {
+      appUtils.setToastMessage(req, 'success', 'The media file was deleted successfully!');
+    }
     res.redirect('/admin/media/');
   });
+};
+
+module.exports.showToastMessage = function(req, res) {
+  if (req.params && req.params.statusCode) {
+    appUtils.setToastMessage(req, 'success', 'Hello dankness my old friend. Status code ('+req.params.statusCode+')');
+  }
+  res.redirect('/admin/media/');
 };

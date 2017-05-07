@@ -1,10 +1,10 @@
 form
   background-color: white
-  padding: 16px 20px
+  padding: 16px
   border-top: 2px solid $lightGreen
   border-bottom: 1px solid #dadada
 
-  input, select, textarea
+  input[type='text'], select, textarea
     margin: 5px 0 5px 0
 
   input, textarea
@@ -31,7 +31,6 @@ form
   button,
   input[type='button'],
   input[type='submit']
-    margin: 16px 0 8px 0
     float: right
 
   a.button
@@ -39,3 +38,29 @@ form
 
   input[type='file']
     display: none
+
+  .errorInput
+    border: 1px solid $errorRed
+
+    &:focus
+      border: 1px solid $errorRed
+      box-shadow: 0px 0px 2px $errorRed
+      transition: border 400ms ease-out, box-shadow 400ms ease-out
+
+  .error
+    color: $errorRed
+    display: none
+
+    p
+      margin: 0
+
+  .buttonGroup
+    margin-top: 16px
+    float: right
+
+    .button
+      width: 100px
+      float: left
+
+      &:first-child
+        margin-right: 8px

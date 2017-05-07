@@ -44,6 +44,8 @@ router.get('/media/create', setNavigationData, mediaController.showMediaCreation
 router.get('/media/edit/:mediaId', setNavigationData, mediaController.showMediaUpdate);
 router.get('/media/delete/:mediaId', setNavigationData, mediaController.deleteMedia);
 
+router.get('/media/toast/:statusCode', mediaController.showToastMessage);
+
 // Settings
 router.get('/settings', setNavigationData, settingsController.showSettings);
 
