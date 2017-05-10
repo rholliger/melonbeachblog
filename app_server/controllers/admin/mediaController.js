@@ -59,10 +59,3 @@ module.exports.deleteMedia = function(req, res) {
     res.redirect('/admin/media/');
   });
 };
-
-module.exports.showToastMessage = function(req, res) {
-  if (req.params && req.params.statusCode) {
-    appUtils.setToastMessage(req, 'success', 'Hello dankness my old friend. Status code ('+req.params.statusCode+')');
-  }
-  res.redirect('/admin/media/');
-};

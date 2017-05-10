@@ -49,13 +49,13 @@ var upload = multer({
 }).single('mediaUpload');
 
 module.exports.getMediaFiles = function(req, res) {
-  Media.find({}, function(err, articles) {
+  Media.find({}, function(err, media) {
     if (err) {
       utils.sendJSONResponse(res, 400, {
         'message': err
       });
     } else {
-      utils.sendJSONResponse(res, 200, articles);
+      utils.sendJSONResponse(res, 200, media);
     }
   });
 };
@@ -109,7 +109,6 @@ module.exports.uploadMediaFile = function(req, res) {
             'message': err
           });
         } else {
-          appUtils.setToastMessage(req, 'success', 'The media file was uploaded successfully!');
           utils.sendJSONResponse(res, 201, media);
         }
       });

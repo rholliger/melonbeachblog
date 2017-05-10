@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var frontController = require('../controllers/admin/frontController');
+var messageController = require('../controllers/admin/messageController');
 var articlesController = require('../controllers/admin/articlesController');
 var mediaController = require('../controllers/admin/mediaController');
 var settingsController = require('../controllers/admin/settingsController');
@@ -44,7 +45,7 @@ router.get('/media/create', setNavigationData, mediaController.showMediaCreation
 router.get('/media/edit/:mediaId', setNavigationData, mediaController.showMediaUpdate);
 router.get('/media/delete/:mediaId', setNavigationData, mediaController.deleteMedia);
 
-router.get('/media/toast/:statusCode', mediaController.showToastMessage);
+router.get('/toast/:view/:statusCode', messageController.showToastMessage);
 
 // Settings
 router.get('/settings', setNavigationData, settingsController.showSettings);

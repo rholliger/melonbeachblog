@@ -39,46 +39,33 @@ mediaForm.find('#uploadZone')
 mediaForm.submit(function(e) {
   e.preventDefault();
 
-  var type = $(this).attr('name');
+  // TODO: Multiupload
+  // var fileSelect = $(this).find('#file');
+  // var files = fileSelect[0].files;
 
-  if (type === 'upload') {
-    // TODO: Multiupload
-    // var fileSelect = $(this).find('#file');
-    // var files = fileSelect[0].files;
+  // console.log('files', files[0]);
 
-    // console.log('files', files[0]);
+  // var formData = new FormData();
 
-    // var formData = new FormData();
+  // for (var i = 0; i < files.length; i++) {
+  //   var file = files[i];
 
-    // for (var i = 0; i < files.length; i++) {
-    //   var file = files[i];
+  //   formData.append('mediaUpload', file);
+  // }
 
-    //   formData.append('mediaUpload', file);
-    // }
+  var formData = new FormData();
+  formData.append('mediaUpload', file);
 
-    var formData = new FormData();
-    formData.append('mediaUpload', file);
-
-    $.ajax({
-      url: ajaxSettings.url + '/media',
-      data: formData,
-      cache: false,
-      contentType: false,
-      processData: false,
-      type: 'POST',
-      success: function(data) {
-        window.location.replace('/admin/media/toast/200');
-        // window.location.replace('/admin/media/');
-      }
-    });
-  } else {
-    var path = window.location.pathname.split('/');
-    var mediaId = path[path.length-2];
-
-    request('/media/'+mediaId, 'PUT', data, function(data, status, jqXHR) {
+  $.ajax({
+    url: ajaxSettings.url + '/media',
+    data: formData,
+    cache: false,
+    contentType: false,
+    processData: false,
+    type: 'POST',
+    success: function(data, textStatus, jqXHR) {
+      console.log(data, textStatus, jqXHR)
       window.location.replace('/admin/media/');
-    }, function(jqXHR, status, error) {
-      console.log(JSON.parse(jqXHR.responseText));
-    });
-  }
+    }
+  });
 });
