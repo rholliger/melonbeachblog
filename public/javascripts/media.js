@@ -1,71 +1,59 @@
-const media = $('#media');
-const mediaForm = media.find('form');
+const MediaForm = (function() {
+  const media = $('#media'),
+        mediaForm = media.find('form'),
+        dropzone = mediaForm.find('#uploadZone');
 
-let file = null;
+  let file = null;
 
-const test = JSON.parse(localStorage.getItem('alert'));
+  const init = function() {
+    bindActions();
+  }
 
-function showFileName(fileName) {
-  mediaForm.find('.info').html(fileName); 
-}
+  const bindActions = function() {
+    mediaForm.find('#uploadButton').on('change', prepareFileForUpload);
+    dropzone.on('dragenter dragover dragleave drop', stopPropagation);
+    dropzone.on('dragenter dragleave drop', changeToDragStyles);
+    dropzone.on('drop', onDropMediaFiles);
+    mediaForm.on('submit', onSubmit);
+  }
 
-mediaForm.find('#uploadButton').on('change', function(e) {
-  file = $(this)[0].files[0];
-  showFileName(file.name);
-});
+  const stopPropagation = function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
 
-function dragAndDropStyles(e, element) {
-  e.stopPropagation();
-  e.preventDefault();
+  const onDropMediaFiles = function(e) {
+    file = e.originalEvent.dataTransfer.files;
 
-  element.toggleClass('dragOver');
-}
-
-mediaForm.find('#uploadZone')
-  .on('dragenter', function(e) {
-    dragAndDropStyles(e, $(this));
-  })
-  .on('dragover', false)
-  .on('dragleave', function(e) {
-    dragAndDropStyles(e, $(this));
-  })
-  .on('drop', function(e) {
-    dragAndDropStyles(e, $(this));
-    file = e.originalEvent.dataTransfer.files[0];
+    // TODO: Can be multiple files
+    console.log(file);
     showFileName(file.name);
-    // showFileName(e.originalEvent.dataTransfer.files[0].name);
-});
+  }
 
-mediaForm.submit(function(e) {
-  e.preventDefault();
+  const changeToDragStyles = function(e) {
+    dropzone.toggleClass('dragOver');
+  }
 
-  // TODO: Multiupload
-  // var fileSelect = $(this).find('#file');
-  // var files = fileSelect[0].files;
+  const showFileName = function(name) {
+    mediaForm.find('.info').html(name);
+  }
 
-  // console.log('files', files[0]);
+  const prepareFileForUpload = function() {
+    file = $(this)[0].files;
+    showFileName(file.name);
+  }
 
-  // var formData = new FormData();
+  const onSubmit = function(e) {
+    e.preventDefault();
 
-  // for (var i = 0; i < files.length; i++) {
-  //   var file = files[i];
-
-  //   formData.append('mediaUpload', file);
-  // }
-
-  var formData = new FormData();
-  formData.append('mediaUpload', file);
-
-  $.ajax({
-    url: ajaxSettings.url + '/media',
-    data: formData,
-    cache: false,
-    contentType: false,
-    processData: false,
-    type: 'POST',
-    success: function(data, textStatus, jqXHR) {
-      console.log(data, textStatus, jqXHR)
+    MediaUpload.upload(file, function(media) {
       window.location.replace('/admin/media/');
-    }
-  });
-});
+    });
+  }
+
+  return {
+    init: init
+  }
+})();
+
+MediaForm.init();
