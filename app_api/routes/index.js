@@ -1,10 +1,16 @@
 var express = require('express');
 var router = express.Router();
+var jwt = require('express-jwt');
+var auth = jwt({
+  secret: process.env.JWT_SECRET,
+  userProperty: 'payload'
+});
 
 var articleController = require('../controllers/articleController');
 var mediaController = require('../controllers/mediaController');
 var usersController = require('../controllers/usersController');
 var categoryController = require('../controllers/categoryController');
+var authController = require('../controllers/authController');
 
 /* ==== Articles ==== */
 
@@ -79,6 +85,16 @@ router.put('/users/:userId', usersController.updateUser);
 
 // Delete a user via user ID
 router.delete('/users/:userId', usersController.deleteUser);
+
+/* ======== */
+
+/* ==== Authentication ==== */
+
+// Register a user
+router.post('/register', authController.register);
+
+// Login
+router.post('/login', authController.login);
 
 /* ======== */
 

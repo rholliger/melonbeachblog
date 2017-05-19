@@ -43,3 +43,6 @@ process.on('SIGTERM', function() {
         process.exit(0);
     });
 });
+
+require('./../models/articles');
+require('./../models/users');

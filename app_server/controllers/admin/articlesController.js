@@ -19,6 +19,7 @@ function getCategories() {
 
 // Show all articles from the database and present them in the article list view
 module.exports.showArticleList = function(req, res) {
+  console.log('cookies', req.cookies.bla);
   request({
     url: utils.apiOptions.serverUrl + '/articles',
     method: 'GET',

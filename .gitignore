@@ -1,3 +1,6 @@
 node_modules
 *.sublime-workspace
 public/uploads/*
+
+# Environment variables
+.env

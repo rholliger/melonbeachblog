@@ -1,3 +1,4 @@
+require('dotenv').load();
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -5,8 +6,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-require('./app_api/libs/db.js');
-require('./app_api/models/articles');
+var passport = require('passport');
+
+require('./app_api/libs/db');
+require('./app_api/config/passport');
 
 var frontendRoutes = require('./app_server/routes/index');
 var backendRoutes = require('./app_server/routes/admin');
@@ -41,6 +44,9 @@ app.use(require('node-sass-middleware')({
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Initialize passport
+app.use(passport.initialize());
+
 // API Routes
 app.use('/api', apiRoutes);
 // Admin (Backend) Routes
@@ -48,14 +54,23 @@ app.use('/admin', backendRoutes);
 // Front-End (Blog) Routes
 app.use('/', frontendRoutes);
 
+// error handlers
+// Catch unauthorized errors
+app.use(function(err, req, res, next) {
+  if (err.name === 'UnauthorizedError') {
+    res.status(401);
+    res.json({
+      message: err.name + ": " + err.message
+    });
+  }
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
-
-// error handlers
 
 // development error handler
 // will print stacktrace

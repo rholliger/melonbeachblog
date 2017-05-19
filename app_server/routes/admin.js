@@ -19,21 +19,35 @@ function setNavigationData(req, res, next) {
       name: 'Media',
       url: '/admin/media/',
       icon: 'picture'
-    },
-    'settings': {
-      name: 'Settings',
-      url: '/admin/settings/',
-      icon: 'cog'
     }
+    // 'settings': {
+    //   name: 'Settings',
+    //   url: '/admin/settings/',
+    //   icon: 'cog'
+    // }
   };
   next();
 }
 
+function checkAuthentication(req, res, next) {
+  if (req.cookies.jwtoken) {
+    next();
+  } else {
+    res.redirect('/admin/login/');
+  }
+}
+
+// Login
+router.get('/login', function(req, res) {
+  console.log('cookie from javascript: ', req.cookies.jwtoken);
+  res.render('admin/login', { title: 'This is the login' });
+});
+
 // Front page (dashboard)
-router.get('/', frontController.showHomepage);
+router.get('/', setNavigationData, frontController.showHomepage);
 
 // Admin Article Routes
-router.get('/articles', setNavigationData, articlesController.showArticleList);
+router.get('/articles', checkAuthentication, setNavigationData, articlesController.showArticleList);
 router.get('/articles/create', setNavigationData, articlesController.showArticleCreation);
 router.get('/articles/edit/:articleId', setNavigationData, articlesController.showArticleUpdate);
 router.get('/articles/delete/:articleId', setNavigationData, articlesController.deleteArticle);
