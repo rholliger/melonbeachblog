@@ -23,7 +23,6 @@ WrongMediaTypeError.prototype.constructor = WrongMediaTypeError;
 // This file filter checks if the client sent an allowed mime type
 var fileFilter = function(req, file, cb) {
   if (file.mimetype.match(ALLOWED_MIMETYPES)) {
-    console.log(file);
     cb(null, true);
   } else {
     return cb(new WrongMediaTypeError(), false);
@@ -46,7 +45,28 @@ var upload = multer({
     fileSize: 40000000 // Limited file size to 40MB
   },
   fileFilter: fileFilter
-}).single('mediaUpload');
+}).array('mediaUpload');
+
+const mediaPromises = [];
+
+var createMediaEntry = function(file, res) {
+  return new Promise((resolve, reject) => {
+    Media.create({
+      fileName: file.filename,
+      mimeType: file.mimetype
+    }, function(err, media) {
+      if (err) {
+        // Delete the uploaded media file from the filesystem if a database error occured
+        fs.unlink(uploadDestination + file.filename, function(err) {
+          if (err) reject(err);
+        });
+        reject(err);
+      } else {
+        resolve(media);
+      }
+    });
+  });
+}
 
 module.exports.getMediaFiles = function(req, res) {
   Media.find({}, function(err, media) {
@@ -96,21 +116,18 @@ module.exports.uploadMediaFile = function(req, res) {
       }
       return;
     } else {
-      Media.create({
-        fileName: req.file.filename,
-        mimeType: req.file.mimetype
-      }, function(err, media) {
-        if (err) {
-          // Delete the uploaded media file from the filesystem if a database error occured
-          fs.unlink(uploadDestination + req.file.filename, function(err) {
-            if (err) throw err;
-          });
-          utils.sendJSONResponse(res, 400, {
-            'message': err
-          });
-        } else {
-          utils.sendJSONResponse(res, 201, media);
-        }
+      req.files.map(function(file) {
+        mediaPromises.push(createMediaEntry(file, res));
+      });
+
+      Promise.all(mediaPromises).then(function(values) {
+        mediaArray = [];
+        mediaArray.push(values);
+        utils.sendJSONResponse(res, 201, mediaArray);
+      }).catch(function(err) {
+        utils.sendJSONResponse(res, 400, {
+          'message': err
+        });
       });
     }
   });
