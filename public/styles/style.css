@@ -75,15 +75,15 @@ input[type='reset'] {
 p, input, textarea, table {
   font-family: 'Palanquin-Light'; }
 
-.admin a.button,
+#admin a.button,
 .alert a.button {
   display: block;
   text-align: center; }
 
-.admin .button,
-.admin input[type='button'],
-.admin input[type='submit'],
-.admin input[type='reset'],
+#admin .button,
+#admin input[type='button'],
+#admin input[type='submit'],
+#admin input[type='reset'],
 .alert .button,
 .alert input[type='button'],
 .alert input[type='submit'],
@@ -95,19 +95,19 @@ p, input, textarea, table {
   border-radius: 3px;
   color: white;
   outline: 0; }
-  .admin .button:hover,
-  .admin input[type='button']:hover,
-  .admin input[type='submit']:hover,
-  .admin input[type='reset']:hover,
+  #admin .button:hover,
+  #admin input[type='button']:hover,
+  #admin input[type='submit']:hover,
+  #admin input[type='reset']:hover,
   .alert .button:hover,
   .alert input[type='button']:hover,
   .alert input[type='submit']:hover,
   .alert input[type='reset']:hover {
     background-color: #90C07F; }
-  .admin .button.cancel,
-  .admin input[type='button'].cancel,
-  .admin input[type='submit'].cancel,
-  .admin input[type='reset'].cancel,
+  #admin .button.cancel,
+  #admin input[type='button'].cancel,
+  #admin input[type='submit'].cancel,
+  #admin input[type='reset'].cancel,
   .alert .button.cancel,
   .alert input[type='button'].cancel,
   .alert input[type='submit'].cancel,
@@ -115,10 +115,10 @@ p, input, textarea, table {
     background-color: white;
     border: 1px solid #BC2E42;
     color: #BC2E42; }
-    .admin .button.cancel:hover,
-    .admin input[type='button'].cancel:hover,
-    .admin input[type='submit'].cancel:hover,
-    .admin input[type='reset'].cancel:hover,
+    #admin .button.cancel:hover,
+    #admin input[type='button'].cancel:hover,
+    #admin input[type='submit'].cancel:hover,
+    #admin input[type='reset'].cancel:hover,
     .alert .button.cancel:hover,
     .alert input[type='button'].cancel:hover,
     .alert input[type='submit'].cancel:hover,
@@ -126,12 +126,12 @@ p, input, textarea, table {
       background-color: #BC2E42;
       color: white; }
 
-.admin .toggle,
+#admin .toggle,
 .alert .toggle {
   max-height: 0;
   max-width: 0;
   opacity: 0; }
-  .admin .toggle + label,
+  #admin .toggle + label,
   .alert .toggle + label {
     display: inline-block;
     position: relative;
@@ -141,7 +141,7 @@ p, input, textarea, table {
     width: 30px;
     border-radius: 8px;
     background-color: #BC2E42; }
-    .admin .toggle + label:before,
+    #admin .toggle + label:before,
     .alert .toggle + label:before {
       content: '';
       position: absolute;
@@ -155,7 +155,7 @@ p, input, textarea, table {
       -moz-transition: .15s ease-in-out;
       -webkit-transition: .15s ease-in-out;
       transition: .15s ease-in-out; }
-    .admin .toggle + label:after,
+    #admin .toggle + label:after,
     .alert .toggle + label:after {
       content: '';
       position: absolute;
@@ -170,11 +170,11 @@ p, input, textarea, table {
       -moz-transition: .15s ease-in-out;
       -webkit-transition: .15s ease-in-out;
       transition: .15s ease-in-out; }
-  .admin .toggle:checked + label:before,
+  #admin .toggle:checked + label:before,
   .alert .toggle:checked + label:before {
     width: 20px;
     background: #8AB57B; }
-  .admin .toggle:checked + label:after,
+  #admin .toggle:checked + label:after,
   .alert .toggle:checked + label:after {
     left: 10px;
     box-shadow: inset 0 0 0 1px #8AB57B, 0 2px 4px rgba(0, 0, 0, 0.2); }
@@ -234,55 +234,57 @@ form {
 .alert button:first-child {
   margin-right: 8px; }
 
-.admin {
+#admin h1 {
+  color: #3F3F3F; }
+
+#admin a {
+  outline: none; }
+
+#admin.container {
+  max-width: 1000px; }
+
+#admin nav a {
+  color: #659057; }
+
+#admin nav.navbar {
+  width: 100%;
+  height: 50px;
+  background-color: #3F3F3F; }
+
+#admin .wrapper {
   padding-top: 60px; }
-  .admin h1 {
-    color: #3F3F3F; }
-  .admin a {
-    outline: none; }
-  .admin.container {
-    max-width: 1000px; }
-  .admin nav a {
-    color: #659057; }
-  .admin nav.navbar {
-    width: 100%;
-    height: 50px;
-    background-color: #3F3F3F; }
-    .admin nav.navbar .user-nav {
-      margin: 14px; }
-      .admin nav.navbar .user-nav a span {
-        font-size: 30px; }
-  .admin .wrapper #sidebar {
+  #admin .wrapper #sidebar {
     position: fixed;
     top: 0;
     bottom: 0;
     background-color: #3F3F3F;
     width: 200px;
-    box-shadow: inset -1px 0px 3px rgba(0, 0, 0, 0.4); }
-    .admin .wrapper #sidebar #admin-logo-container {
+    box-shadow: inset -1px 0px 3px rgba(0, 0, 0, 0.4);
+    z-index: 1040; }
+    #admin .wrapper #sidebar #admin-logo-container {
       width: 126px;
       margin: 55px auto; }
-      .admin .wrapper #sidebar #admin-logo-container #small-logo {
+      #admin .wrapper #sidebar #admin-logo-container #small-logo {
         background-image: url("../images/logo_small@2x.png");
         background-size: 126px 39px;
         height: 39px; }
-    .admin .wrapper #sidebar nav {
+    #admin .wrapper #sidebar nav {
       padding-right: 0; }
-      .admin .wrapper #sidebar nav ul {
+      #admin .wrapper #sidebar nav ul {
         list-style: none;
         list-style-type: none;
         margin: 0;
         padding: 0; }
-        .admin .wrapper #sidebar nav ul li {
+        #admin .wrapper #sidebar nav ul li {
           color: #659057;
           position: relative;
           margin: 8px 0;
           width: 210px; }
-          .admin .wrapper #sidebar nav ul li.active a {
+          #admin .wrapper #sidebar nav ul li.active a {
             background-color: #659057;
             color: #8AB57B;
             border-left: 4px solid #8AB57B; }
-          .admin .wrapper #sidebar nav ul li.active .right-edge {
+          #admin .wrapper #sidebar nav ul li.active .right-edge {
             position: absolute;
             width: 0px;
             height: 0px;
@@ -291,134 +293,141 @@ form {
             border-width: 10px 10px 0 0;
             border-style: solid;
             border-color: #659057 transparent transparent transparent; }
-          .admin .wrapper #sidebar nav ul li a {
+          #admin .wrapper #sidebar nav ul li a {
             display: block;
             padding: 8px 0;
             height: 100%; }
-            .admin .wrapper #sidebar nav ul li a:hover {
+            #admin .wrapper #sidebar nav ul li a:hover {
               color: #8AB57B; }
-            .admin .wrapper #sidebar nav ul li a span {
+            #admin .wrapper #sidebar nav ul li a span {
               font-size: 18px;
               padding-left: 20px;
               vertical-align: middle; }
-              .admin .wrapper #sidebar nav ul li a span.glyphicon {
+              #admin .wrapper #sidebar nav ul li a span.glyphicon {
                 font-size: 28px; }
-  .admin .wrapper #content {
+  #admin .wrapper #content {
     background-color: #F0F0F0;
     padding: 14px;
     padding-left: 210px; }
-    .admin .wrapper #content nav {
-      margin-left: 200px;
+    #admin .wrapper #content nav {
       background-color: #8AB57B;
       border-bottom: 2px solid #659057; }
-    .admin .wrapper #content #articles .header, .admin .wrapper #content #media .header {
+      #admin .wrapper #content nav .container-fluid {
+        height: 100%; }
+        #admin .wrapper #content nav .container-fluid .user-nav {
+          height: 100%;
+          display: flex;
+          align-items: center; }
+          #admin .wrapper #content nav .container-fluid .user-nav a span {
+            font-size: 30px; }
+    #admin .wrapper #content #articles .header, #admin .wrapper #content #media .header {
       border-bottom: 1px solid #e0e0e0;
       margin-bottom: 29px; }
-      .admin .wrapper #content #articles .header h1, .admin .wrapper #content #media .header h1 {
+      #admin .wrapper #content #articles .header h1, #admin .wrapper #content #media .header h1 {
         margin-bottom: 6px; }
-      .admin .wrapper #content #articles .header a.create, .admin .wrapper #content #media .header a.create {
+      #admin .wrapper #content #articles .header a.create, #admin .wrapper #content #media .header a.create {
         font-size: 30px;
         padding: 2px 4px;
         color: #659057; }
-        .admin .wrapper #content #articles .header a.create:hover, .admin .wrapper #content #media .header a.create:hover {
+        #admin .wrapper #content #articles .header a.create:hover, #admin .wrapper #content #media .header a.create:hover {
           color: #8AB57B; }
-    .admin .wrapper #content #articles .list, .admin .wrapper #content #media .list {
+    #admin .wrapper #content #articles .list, #admin .wrapper #content #media .list {
       margin: 0 0 12px 0;
       border-bottom: 1px solid #d8d8d8;
       /* -- test -- */
       /* --- */ }
-      .admin .wrapper #content #articles .list .preview, .admin .wrapper #content #media .list .preview {
+      #admin .wrapper #content #articles .list .preview, #admin .wrapper #content #media .list .preview {
         position: relative; }
-        .admin .wrapper #content #articles .list .preview img, .admin .wrapper #content #media .list .preview img {
+        #admin .wrapper #content #articles .list .preview img, #admin .wrapper #content #media .list .preview img {
           position: relative; }
-        .admin .wrapper #content #articles .list .preview span, .admin .wrapper #content #media .list .preview span {
+        #admin .wrapper #content #articles .list .preview span, #admin .wrapper #content #media .list .preview span {
           position: absolute;
           right: 3px;
           bottom: 3px;
           top: auto;
           color: white;
           font-size: 30px; }
-      .admin .wrapper #content #articles .list img, .admin .wrapper #content #media .list img {
+      #admin .wrapper #content #articles .list img, #admin .wrapper #content #media .list img {
         width: 200px; }
-      .admin .wrapper #content #articles .list table, .admin .wrapper #content #media .list table {
+      #admin .wrapper #content #articles .list table, #admin .wrapper #content #media .list table {
         width: 100%;
         color: #3F3F3F; }
-        .admin .wrapper #content #articles .list table thead, .admin .wrapper #content #media .list table thead {
+        #admin .wrapper #content #articles .list table thead, #admin .wrapper #content #media .list table thead {
           background-color: #8AB57B; }
-          .admin .wrapper #content #articles .list table thead tr, .admin .wrapper #content #media .list table thead tr {
+          #admin .wrapper #content #articles .list table thead tr, #admin .wrapper #content #media .list table thead tr {
             border-bottom: 2px solid #659057; }
-            .admin .wrapper #content #articles .list table thead tr th, .admin .wrapper #content #media .list table thead tr th {
+            #admin .wrapper #content #articles .list table thead tr th, #admin .wrapper #content #media .list table thead tr th {
               padding-bottom: 2px;
               text-align: left;
               padding: 10px 20px;
               color: #659057; }
-        .admin .wrapper #content #articles .list table tbody, .admin .wrapper #content #media .list table tbody {
+        #admin .wrapper #content #articles .list table tbody, #admin .wrapper #content #media .list table tbody {
           background-color: white; }
-          .admin .wrapper #content #articles .list table tbody tr:not(:last-child), .admin .wrapper #content #media .list table tbody tr:not(:last-child) {
+          #admin .wrapper #content #articles .list table tbody tr:not(:last-child), #admin .wrapper #content #media .list table tbody tr:not(:last-child) {
             border-bottom: 1px solid #E0E0E0; }
-          .admin .wrapper #content #articles .list table tbody tr:hover, .admin .wrapper #content #media .list table tbody tr:hover {
+          #admin .wrapper #content #articles .list table tbody tr:hover, #admin .wrapper #content #media .list table tbody tr:hover {
             background-color: #f8f8f8; }
-            .admin .wrapper #content #articles .list table tbody tr:hover a, .admin .wrapper #content #media .list table tbody tr:hover a {
+            #admin .wrapper #content #articles .list table tbody tr:hover a, #admin .wrapper #content #media .list table tbody tr:hover a {
               color: white; }
-          .admin .wrapper #content #articles .list table tbody tr:first-child td, .admin .wrapper #content #media .list table tbody tr:first-child td {
+          #admin .wrapper #content #articles .list table tbody tr:first-child td, #admin .wrapper #content #media .list table tbody tr:first-child td {
             padding-top: 10px; }
-          .admin .wrapper #content #articles .list table tbody tr td a.edit, .admin .wrapper #content #media .list table tbody tr td a.edit {
+          #admin .wrapper #content #articles .list table tbody tr td a.edit, #admin .wrapper #content #media .list table tbody tr td a.edit {
             color: #3DA8DB; }
-          .admin .wrapper #content #articles .list table tbody tr td a.delete, .admin .wrapper #content #media .list table tbody tr td a.delete {
+          #admin .wrapper #content #articles .list table tbody tr td a.delete, #admin .wrapper #content #media .list table tbody tr td a.delete {
             color: #BC2E42; }
-          .admin .wrapper #content #articles .list table tbody tr td, .admin .wrapper #content #media .list table tbody tr td {
+          #admin .wrapper #content #articles .list table tbody tr td, #admin .wrapper #content #media .list table tbody tr td {
             padding: 10px 20px; }
-            .admin .wrapper #content #articles .list table tbody tr td:first-child, .admin .wrapper #content #media .list table tbody tr td:first-child {
+            #admin .wrapper #content #articles .list table tbody tr td:first-child, #admin .wrapper #content #media .list table tbody tr td:first-child {
               width: 6%; }
-              .admin .wrapper #content #articles .list table tbody tr td:first-child .toggle + label, .admin .wrapper #content #media .list table tbody tr td:first-child .toggle + label {
+              #admin .wrapper #content #articles .list table tbody tr td:first-child .toggle + label, #admin .wrapper #content #media .list table tbody tr td:first-child .toggle + label {
                 margin: 0;
                 vertical-align: middle; }
-            .admin .wrapper #content #articles .list table tbody tr td:nth-child(2), .admin .wrapper #content #media .list table tbody tr td:nth-child(2) {
+            #admin .wrapper #content #articles .list table tbody tr td:nth-child(2), #admin .wrapper #content #media .list table tbody tr td:nth-child(2) {
               width: 20%; }
-            .admin .wrapper #content #articles .list table tbody tr td:nth-child(3), .admin .wrapper #content #media .list table tbody tr td:nth-child(3) {
+            #admin .wrapper #content #articles .list table tbody tr td:nth-child(3), #admin .wrapper #content #media .list table tbody tr td:nth-child(3) {
               width: 20%; }
-            .admin .wrapper #content #articles .list table tbody tr td:nth-child(4), .admin .wrapper #content #media .list table tbody tr td:nth-child(4) {
+            #admin .wrapper #content #articles .list table tbody tr td:nth-child(4), #admin .wrapper #content #media .list table tbody tr td:nth-child(4) {
               width: 40%; }
-            .admin .wrapper #content #articles .list table tbody tr td:nth-child(5), .admin .wrapper #content #media .list table tbody tr td:nth-child(5) {
+            #admin .wrapper #content #articles .list table tbody tr td:nth-child(5), #admin .wrapper #content #media .list table tbody tr td:nth-child(5) {
               width: 14%; }
-            .admin .wrapper #content #articles .list table tbody tr td.options, .admin .wrapper #content #media .list table tbody tr td.options {
+            #admin .wrapper #content #articles .list table tbody tr td.options, #admin .wrapper #content #media .list table tbody tr td.options {
               text-align: right; }
-              .admin .wrapper #content #articles .list table tbody tr td.options a, .admin .wrapper #content #media .list table tbody tr td.options a {
+              #admin .wrapper #content #articles .list table tbody tr td.options a, #admin .wrapper #content #media .list table tbody tr td.options a {
                 cursor: pointer;
                 padding-left: 10px;
                 font-size: 20px; }
-    .admin .wrapper #content #articles .creation .alert, .admin .wrapper #content #articles .edit .alert, .admin .wrapper #content #media .creation .alert, .admin .wrapper #content #media .edit .alert {
+    #admin .wrapper #content #articles .creation .alert, #admin .wrapper #content #articles .edit .alert, #admin .wrapper #content #media .creation .alert, #admin .wrapper #content #media .edit .alert {
       display: none; }
-    .admin .wrapper #content #articles .creation form select, .admin .wrapper #content #articles .edit form select, .admin .wrapper #content #media .creation form select, .admin .wrapper #content #media .edit form select {
+    #admin .wrapper #content #articles .creation form select, #admin .wrapper #content #articles .edit form select, #admin .wrapper #content #media .creation form select, #admin .wrapper #content #media .edit form select {
       display: block; }
-    .admin .wrapper #content #articles .creation #uploadZone, .admin .wrapper #content #articles .edit #uploadZone, .admin .wrapper #content #media .creation #uploadZone, .admin .wrapper #content #media .edit #uploadZone {
+    #admin .wrapper #content #articles .creation #uploadZone, #admin .wrapper #content #articles .edit #uploadZone, #admin .wrapper #content #media .creation #uploadZone, #admin .wrapper #content #media .edit #uploadZone {
       width: 600px;
       height: 300px;
       margin: 32px auto;
       border: 2px dashed #8AB57B;
       position: relative; }
-      .admin .wrapper #content #articles .creation #uploadZone.dragOver, .admin .wrapper #content #articles .edit #uploadZone.dragOver, .admin .wrapper #content #media .creation #uploadZone.dragOver, .admin .wrapper #content #media .edit #uploadZone.dragOver {
+      #admin .wrapper #content #articles .creation #uploadZone.dragOver, #admin .wrapper #content #articles .edit #uploadZone.dragOver, #admin .wrapper #content #media .creation #uploadZone.dragOver, #admin .wrapper #content #media .edit #uploadZone.dragOver {
         padding: 20px;
         border: 2px solid #8AB57B;
         background-color: rgba(138, 181, 123, 0.1); }
-      .admin .wrapper #content #articles .creation #uploadZone .uploadButtonContainer, .admin .wrapper #content #articles .edit #uploadZone .uploadButtonContainer, .admin .wrapper #content #media .creation #uploadZone .uploadButtonContainer, .admin .wrapper #content #media .edit #uploadZone .uploadButtonContainer {
+      #admin .wrapper #content #articles .creation #uploadZone .uploadButtonContainer, #admin .wrapper #content #articles .edit #uploadZone .uploadButtonContainer, #admin .wrapper #content #media .creation #uploadZone .uploadButtonContainer, #admin .wrapper #content #media .edit #uploadZone .uploadButtonContainer {
         width: 184px;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); }
-        .admin .wrapper #content #articles .creation #uploadZone .uploadButtonContainer label, .admin .wrapper #content #articles .edit #uploadZone .uploadButtonContainer label, .admin .wrapper #content #media .creation #uploadZone .uploadButtonContainer label, .admin .wrapper #content #media .edit #uploadZone .uploadButtonContainer label {
+        #admin .wrapper #content #articles .creation #uploadZone .uploadButtonContainer label, #admin .wrapper #content #articles .edit #uploadZone .uploadButtonContainer label, #admin .wrapper #content #media .creation #uploadZone .uploadButtonContainer label, #admin .wrapper #content #media .edit #uploadZone .uploadButtonContainer label {
           float: none; }
-        .admin .wrapper #content #articles .creation #uploadZone .uploadButtonContainer p, .admin .wrapper #content #articles .edit #uploadZone .uploadButtonContainer p, .admin .wrapper #content #media .creation #uploadZone .uploadButtonContainer p, .admin .wrapper #content #media .edit #uploadZone .uploadButtonContainer p {
+        #admin .wrapper #content #articles .creation #uploadZone .uploadButtonContainer p, #admin .wrapper #content #articles .edit #uploadZone .uploadButtonContainer p, #admin .wrapper #content #media .creation #uploadZone .uploadButtonContainer p, #admin .wrapper #content #media .edit #uploadZone .uploadButtonContainer p {
           text-align: center; }
-    .admin .wrapper #content #articles .creation .mediaChooser, .admin .wrapper #content #articles .edit .mediaChooser, .admin .wrapper #content #media .creation .mediaChooser, .admin .wrapper #content #media .edit .mediaChooser {
+    #admin .wrapper #content #articles .creation .mediaChooser, #admin .wrapper #content #articles .edit .mediaChooser, #admin .wrapper #content #media .creation .mediaChooser, #admin .wrapper #content #media .edit .mediaChooser {
       margin: 0 auto;
       width: 400px;
       border: 1px solid #659057;
       padding: 10px; }
-      .admin .wrapper #content #articles .creation .mediaChooser input, .admin .wrapper #content #articles .edit .mediaChooser input, .admin .wrapper #content #media .creation .mediaChooser input, .admin .wrapper #content #media .edit .mediaChooser input {
+      #admin .wrapper #content #articles .creation .mediaChooser input, #admin .wrapper #content #articles .edit .mediaChooser input, #admin .wrapper #content #media .creation .mediaChooser input, #admin .wrapper #content #media .edit .mediaChooser input {
         display: none; }
-      .admin .wrapper #content #articles .creation .mediaChooser label, .admin .wrapper #content #articles .edit .mediaChooser label, .admin .wrapper #content #media .creation .mediaChooser label, .admin .wrapper #content #media .edit .mediaChooser label {
+      #admin .wrapper #content #articles .creation .mediaChooser label, #admin .wrapper #content #articles .edit .mediaChooser label, #admin .wrapper #content #media .creation .mediaChooser label, #admin .wrapper #content #media .edit .mediaChooser label {
         width: 184px;
         float: left;
         margin: 0;
@@ -426,51 +435,70 @@ form {
         height: 80px;
         text-align: center;
         cursor: pointer; }
-        .admin .wrapper #content #articles .creation .mediaChooser label:first-child, .admin .wrapper #content #articles .edit .mediaChooser label:first-child, .admin .wrapper #content #media .creation .mediaChooser label:first-child, .admin .wrapper #content #media .edit .mediaChooser label:first-child {
+        #admin .wrapper #content #articles .creation .mediaChooser label:first-child, #admin .wrapper #content #articles .edit .mediaChooser label:first-child, #admin .wrapper #content #media .creation .mediaChooser label:first-child, #admin .wrapper #content #media .edit .mediaChooser label:first-child {
           margin-right: 10px; }
-        .admin .wrapper #content #articles .creation .mediaChooser label:hover, .admin .wrapper #content #articles .edit .mediaChooser label:hover, .admin .wrapper #content #media .creation .mediaChooser label:hover, .admin .wrapper #content #media .edit .mediaChooser label:hover {
+        #admin .wrapper #content #articles .creation .mediaChooser label:hover, #admin .wrapper #content #articles .edit .mediaChooser label:hover, #admin .wrapper #content #media .creation .mediaChooser label:hover, #admin .wrapper #content #media .edit .mediaChooser label:hover {
           background-color: #90C07F; }
-        .admin .wrapper #content #articles .creation .mediaChooser label > span, .admin .wrapper #content #articles .edit .mediaChooser label > span, .admin .wrapper #content #media .creation .mediaChooser label > span, .admin .wrapper #content #media .edit .mediaChooser label > span {
+        #admin .wrapper #content #articles .creation .mediaChooser label > span, #admin .wrapper #content #articles .edit .mediaChooser label > span, #admin .wrapper #content #media .creation .mediaChooser label > span, #admin .wrapper #content #media .edit .mediaChooser label > span {
           position: relative;
           color: white;
           top: 12px; }
-          .admin .wrapper #content #articles .creation .mediaChooser label > span span:first-child, .admin .wrapper #content #articles .edit .mediaChooser label > span span:first-child, .admin .wrapper #content #media .creation .mediaChooser label > span span:first-child, .admin .wrapper #content #media .edit .mediaChooser label > span span:first-child {
+          #admin .wrapper #content #articles .creation .mediaChooser label > span span:first-child, #admin .wrapper #content #articles .edit .mediaChooser label > span span:first-child, #admin .wrapper #content #media .creation .mediaChooser label > span span:first-child, #admin .wrapper #content #media .edit .mediaChooser label > span span:first-child {
             font-size: 30px; }
-    .admin .wrapper #content #articles .creation .mediaElement, .admin .wrapper #content #articles .edit .mediaElement, .admin .wrapper #content #media .creation .mediaElement, .admin .wrapper #content #media .edit .mediaElement {
+    #admin .wrapper #content #articles .creation .mediaElement, #admin .wrapper #content #articles .edit .mediaElement, #admin .wrapper #content #media .creation .mediaElement, #admin .wrapper #content #media .edit .mediaElement {
       display: none;
       margin: 10px 0; }
-      .admin .wrapper #content #articles .creation .mediaElement .imageContainer,
-      .admin .wrapper #content #articles .creation .mediaElement .inputContainer, .admin .wrapper #content #articles .edit .mediaElement .imageContainer,
-      .admin .wrapper #content #articles .edit .mediaElement .inputContainer, .admin .wrapper #content #media .creation .mediaElement .imageContainer,
-      .admin .wrapper #content #media .creation .mediaElement .inputContainer, .admin .wrapper #content #media .edit .mediaElement .imageContainer,
-      .admin .wrapper #content #media .edit .mediaElement .inputContainer {
+      #admin .wrapper #content #articles .creation .mediaElement .imageContainer,
+      #admin .wrapper #content #articles .creation .mediaElement .inputContainer, #admin .wrapper #content #articles .edit .mediaElement .imageContainer,
+      #admin .wrapper #content #articles .edit .mediaElement .inputContainer, #admin .wrapper #content #media .creation .mediaElement .imageContainer,
+      #admin .wrapper #content #media .creation .mediaElement .inputContainer, #admin .wrapper #content #media .edit .mediaElement .imageContainer,
+      #admin .wrapper #content #media .edit .mediaElement .inputContainer {
         float: left; }
-      .admin .wrapper #content #articles .creation .mediaElement .imageContainer, .admin .wrapper #content #articles .edit .mediaElement .imageContainer, .admin .wrapper #content #media .creation .mediaElement .imageContainer, .admin .wrapper #content #media .edit .mediaElement .imageContainer {
+      #admin .wrapper #content #articles .creation .mediaElement .imageContainer, #admin .wrapper #content #articles .edit .mediaElement .imageContainer, #admin .wrapper #content #media .creation .mediaElement .imageContainer, #admin .wrapper #content #media .edit .mediaElement .imageContainer {
         position: relative;
         width: 30%; }
-        .admin .wrapper #content #articles .creation .mediaElement .imageContainer:hover .iconContainer, .admin .wrapper #content #articles .edit .mediaElement .imageContainer:hover .iconContainer, .admin .wrapper #content #media .creation .mediaElement .imageContainer:hover .iconContainer, .admin .wrapper #content #media .edit .mediaElement .imageContainer:hover .iconContainer {
+        #admin .wrapper #content #articles .creation .mediaElement .imageContainer:hover .iconContainer, #admin .wrapper #content #articles .edit .mediaElement .imageContainer:hover .iconContainer, #admin .wrapper #content #media .creation .mediaElement .imageContainer:hover .iconContainer, #admin .wrapper #content #media .edit .mediaElement .imageContainer:hover .iconContainer {
           display: block; }
-        .admin .wrapper #content #articles .creation .mediaElement .imageContainer img, .admin .wrapper #content #articles .edit .mediaElement .imageContainer img, .admin .wrapper #content #media .creation .mediaElement .imageContainer img, .admin .wrapper #content #media .edit .mediaElement .imageContainer img {
+        #admin .wrapper #content #articles .creation .mediaElement .imageContainer img, #admin .wrapper #content #articles .edit .mediaElement .imageContainer img, #admin .wrapper #content #media .creation .mediaElement .imageContainer img, #admin .wrapper #content #media .edit .mediaElement .imageContainer img {
           position: relative;
           width: 100%;
           padding-right: 10px; }
-        .admin .wrapper #content #articles .creation .mediaElement .imageContainer .iconContainer, .admin .wrapper #content #articles .edit .mediaElement .imageContainer .iconContainer, .admin .wrapper #content #media .creation .mediaElement .imageContainer .iconContainer, .admin .wrapper #content #media .edit .mediaElement .imageContainer .iconContainer {
+        #admin .wrapper #content #articles .creation .mediaElement .imageContainer .iconContainer, #admin .wrapper #content #articles .edit .mediaElement .imageContainer .iconContainer, #admin .wrapper #content #media .creation .mediaElement .imageContainer .iconContainer, #admin .wrapper #content #media .edit .mediaElement .imageContainer .iconContainer {
           display: none;
           position: absolute;
           background-color: black;
           bottom: 0;
           right: 10px;
           padding: 4px 6px; }
-          .admin .wrapper #content #articles .creation .mediaElement .imageContainer .iconContainer .glyphicon, .admin .wrapper #content #articles .edit .mediaElement .imageContainer .iconContainer .glyphicon, .admin .wrapper #content #media .creation .mediaElement .imageContainer .iconContainer .glyphicon, .admin .wrapper #content #media .edit .mediaElement .imageContainer .iconContainer .glyphicon {
+          #admin .wrapper #content #articles .creation .mediaElement .imageContainer .iconContainer .glyphicon, #admin .wrapper #content #articles .edit .mediaElement .imageContainer .iconContainer .glyphicon, #admin .wrapper #content #media .creation .mediaElement .imageContainer .iconContainer .glyphicon, #admin .wrapper #content #media .edit .mediaElement .imageContainer .iconContainer .glyphicon {
             color: white;
             font-size: 20px;
             vertical-align: sub; }
-      .admin .wrapper #content #articles .creation .mediaElement .inputContainer, .admin .wrapper #content #articles .edit .mediaElement .inputContainer, .admin .wrapper #content #media .creation .mediaElement .inputContainer, .admin .wrapper #content #media .edit .mediaElement .inputContainer {
+      #admin .wrapper #content #articles .creation .mediaElement .inputContainer, #admin .wrapper #content #articles .edit .mediaElement .inputContainer, #admin .wrapper #content #media .creation .mediaElement .inputContainer, #admin .wrapper #content #media .edit .mediaElement .inputContainer {
         width: 70%; }
-        .admin .wrapper #content #articles .creation .mediaElement .inputContainer input, .admin .wrapper #content #articles .edit .mediaElement .inputContainer input, .admin .wrapper #content #media .creation .mediaElement .inputContainer input, .admin .wrapper #content #media .edit .mediaElement .inputContainer input {
+        #admin .wrapper #content #articles .creation .mediaElement .inputContainer input, #admin .wrapper #content #articles .edit .mediaElement .inputContainer input, #admin .wrapper #content #media .creation .mediaElement .inputContainer input, #admin .wrapper #content #media .edit .mediaElement .inputContainer input {
           margin: 0 0 10px 0; }
-    .admin .wrapper #content #articles .edit .mediaElement, .admin .wrapper #content #media .edit .mediaElement {
+    #admin .wrapper #content #articles .edit .mediaElement, #admin .wrapper #content #media .edit .mediaElement {
       display: block; }
+
+#login {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%; }
+  #login .loginContainer {
+    width: 320px; }
+    #login .loginContainer input[type='email'], #login .loginContainer input[type='password'] {
+      margin-bottom: 10px; }
+    #login .loginContainer .logoContainer {
+      width: 225px;
+      margin: 30px auto; }
+      #login .loginContainer .logoContainer .logo {
+        background-image: url("../images/logo@2x.png");
+        background-size: 225px 69px;
+        height: 69px; }
 
 #blog a {
   color: #8AB57B; }

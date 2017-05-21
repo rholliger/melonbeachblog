@@ -1,46 +1,28 @@
-doctype html
-html
-  head
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    title= title
-    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/styles/style.css')
-    link(rel='stylesheet', href='/styles/vendor/sweetalert2.css')
-  body
-    .admin
-      .wrapper
-        #sidebar
-          #admin-logo-container
-            #small-logo
+extends skeleton
 
-          nav
-            ul
-              each value, key in navigation
-                li(class= type === key ? 'active' : '')
-                  a(href=value.url)
-                    span(class='glyphicon glyphicon-'+value.icon)
-                    span= value.name
-                  span.right-edge
+block content
+  .wrapper
+    #sidebar
+      #admin-logo-container
+        #small-logo
 
-        #content
-          nav.navbar.navbar-fixed-top
-            .container-fluid
-              .user-nav.pull-right
-                a(href='#')
-                  span.glyphicon.glyphicon-off
+      nav
+        ul
+          each value, key in navigation
+            li(class= type === key ? 'active' : '')
+              a(href=value.url)
+                span(class='glyphicon glyphicon-'+value.icon)
+                span= value.name
+              span.right-edge
 
-          .container-fluid
-            .row
-              section.col-lg-12
-                block adminContent
+    #content
+      nav.navbar.navbar-fixed-top
+        .container-fluid
+          .user-nav.pull-right
+            a(href='/admin/logout/')
+              span.glyphicon.glyphicon-off
 
-    script(src='/javascripts/vendor/jquery-3.1.1.min.js')
-    script(src='/javascripts/vendor/sweetalert2.min.js')
-    script(src='/javascripts/vendor/approve.min.js')
-    script(src='/tinymce/tinymce.min.js')
-    script(src='/javascripts/settings.js')
-    script(src='/javascripts/utils.js')
-    script(src='/javascripts/main.js')
-    script(src='/javascripts/MediaUpload.js')
-    script(src='/javascripts/articles.js')
-    script(src='/javascripts/media.js')
+      .container-fluid
+        .row
+          section.col-lg-12
+            block adminContent

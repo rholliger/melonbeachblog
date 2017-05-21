@@ -37,17 +37,24 @@ function checkAuthentication(req, res, next) {
   }
 }
 
-// Login
+// Login & Logout
 router.get('/login', function(req, res) {
-  console.log('cookie from javascript: ', req.cookies.jwtoken);
   res.render('admin/login', { title: 'This is the login' });
 });
+
+router.get('/logout', function(req, res) {
+  res.clearCookie('jwtoken');
+  res.redirect('/admin/login/');
+});
+
+// Every admin route should be authenticated first, to see if the user is logged in
+router.get('/*', checkAuthentication);
 
 // Front page (dashboard)
 router.get('/', setNavigationData, frontController.showHomepage);
 
 // Admin Article Routes
-router.get('/articles', checkAuthentication, setNavigationData, articlesController.showArticleList);
+router.get('/articles', setNavigationData, articlesController.showArticleList);
 router.get('/articles/create', setNavigationData, articlesController.showArticleCreation);
 router.get('/articles/edit/:articleId', setNavigationData, articlesController.showArticleUpdate);
 router.get('/articles/delete/:articleId', setNavigationData, articlesController.deleteArticle);

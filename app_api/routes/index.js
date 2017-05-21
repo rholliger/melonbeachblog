@@ -21,16 +21,16 @@ router.get('/articles', articleController.getArticles);
 router.get('/articles/:articleId', articleController.getArticle);
 
 // Create a new article
-router.post('/articles', articleController.createArticle);
+router.post('/articles', auth, articleController.createArticle);
 
 // Update an article via article ID
-router.put('/articles/:articleId', articleController.updateArticle);
+router.put('/articles/:articleId', auth, articleController.updateArticle);
 
 // Delete an article via article ID
-router.delete('/articles/:articleId', articleController.deleteArticle);
+router.delete('/articles/:articleId', auth, articleController.deleteArticle);
 
 // Test for active state
-router.put('/articles/:articleId/active', articleController.setActiveState);
+router.put('/articles/:articleId/active', auth, articleController.setActiveState);
 
 /* ======== */
 
@@ -40,13 +40,13 @@ router.put('/articles/:articleId/active', articleController.setActiveState);
 router.get('/categories', categoryController.getCategories);
 
 // Create a new category
-router.post('/categories', categoryController.createCategory);
+router.post('/categories', auth, categoryController.createCategory);
 
 // TODO: Do we need to change a category? (It only has a name)
 // router.put...
 
 // Delete a category via category ID
-router.delete('/categories/:categoryId', categoryController.deleteCategory);
+router.delete('/categories/:categoryId', auth, categoryController.deleteCategory);
 
 /* ======== */
 
@@ -59,17 +59,19 @@ router.get('/media', mediaController.getMediaFiles);
 router.get('/media/:mediaId', mediaController.getMediaFile);
 
 // Create / upload a new media file
-router.post('/media', mediaController.uploadMediaFile);
+router.post('/media', auth, mediaController.uploadMediaFile);
 
 // Edit the media file
-router.put('/media/:mediaId', mediaController.editMediaFile);
+router.put('/media/:mediaId', auth, mediaController.editMediaFile);
 
 // Delete a media file via media ID
-router.delete('/media/:mediaId', mediaController.deleteMediaFile);
+router.delete('/media/:mediaId', auth, mediaController.deleteMediaFile);
 
 /* ======== */
 
-/* ==== Media ==== */
+/* ==== Users ==== 
+
+// TODO: User Management
 
 // Get all users
 router.get('/users', usersController.getUsers);

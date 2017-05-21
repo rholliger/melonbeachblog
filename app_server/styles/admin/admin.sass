@@ -5,9 +5,7 @@
 @import 'list'
 @import 'creation'
 
-.admin
-  padding-top: 60px
-
+#admin
   h1
     color: $darkGrey
 
@@ -26,13 +24,9 @@
       height: 50px
       background-color: $darkGrey
 
-      .user-nav
-        margin: 14px
-        a
-          span
-            font-size: 30px
-
   .wrapper
+    padding-top: 60px
+    
     #sidebar
       position: fixed
       top: 0
@@ -41,6 +35,7 @@
       width: 200px
       // border-right: 3px solid #333
       box-shadow: inset -1px 0px 3px rgba(0, 0, 0, 0.4)
+      z-index: 1040 // Needs to be higher than the navbar
 
       #admin-logo-container
         width: 126px
@@ -104,9 +99,20 @@
       padding-left: 210px
 
       nav
-        margin-left: 200px
         background-color: $lightGreen
         border-bottom: 2px solid $darkGreen
+
+        .container-fluid
+          height: 100%
+
+          .user-nav
+            height: 100%
+            display: flex
+            align-items: center
+
+            a
+              span
+                font-size: 30px
 
       #articles, #media
         .header
@@ -126,3 +132,5 @@
 
         +list
         +creation
+
+@import 'login'

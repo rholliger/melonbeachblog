@@ -31,26 +31,3 @@ $('.list').find('.toggle').on('change', function(e) {
     console.log(JSON.parse(jqXHR.responseText));
   })
 });
-
-$('form[name="login"]').submit(function(e) {
-  e.preventDefault();
-
-  var email = $(this).find('input[name="email"]').val();
-  var password = $(this).find('input[name="password"]').val();
-
-  var loginData = {
-    email: email,
-    password: password
-  };
-
-  request('/login', 'POST', loginData, function(data, status, jqXHR) {
-    var date = new Date();
-    date.setTime(date.getTime() + 5000);
-
-    document.cookie = "jwtoken=" + data.token + "; expires=" + date.toUTCString() + "; path=/";
-
-    window.location.replace('/admin/articles/');
-  }, function(jqXHR, status, error) {
-    console.log('error', error);
-  });
-});
