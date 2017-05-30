@@ -2,6 +2,9 @@ var mongoose = require('mongoose');
 var gracefulShutdown;
 
 var dbURI = 'mongodb://localhost/MelonBeachBlog';
+if (process.env.NODE_ENV === 'production') {
+    dbURI = 'mongodb://139.59.146.243:27018/MelonBeachBlog'
+}
 mongoose.connect(dbURI);
 
 mongoose.connection.on('connected', function() {
