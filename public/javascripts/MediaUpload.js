@@ -20,6 +20,9 @@ const MediaUpload = (function() {
       contentType: false,
       processData: false,
       type: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + Cookies.get('jwtoken')
+      },
       success: callback
       // error: error callback?
     });
