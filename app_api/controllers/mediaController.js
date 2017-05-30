@@ -1,6 +1,5 @@
 var fs = require('fs');
 var multer = require('multer');
-var flash = require('connect-flash');
 var appUtils = require('../../appUtils');
 var utils = require('../libs/utils');
 var Media = require('../models/media').Model;
