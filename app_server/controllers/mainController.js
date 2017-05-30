@@ -3,7 +3,8 @@ var moment = require('moment');
 var utils = require('../libs/utils');
 
 var apiOptions = {
-  serverUrl: 'http://localhost:3000/api'
+  // serverUrl: 'http://localhost:3000/api'
+  serverUrl: 'http://139.59.146.243:3000/api'
 };
 
 function requestArticles(path, callback) {
