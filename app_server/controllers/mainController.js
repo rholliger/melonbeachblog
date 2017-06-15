@@ -1,15 +1,11 @@
 var request = require('request');
 var moment = require('moment');
+var config = require('../config');
 var utils = require('../libs/utils');
-
-var apiOptions = {
-  // serverUrl: 'http://localhost:3000/api'
-  serverUrl: 'http://139.59.146.243:3000/api'
-};
 
 function requestArticles(path, callback) {
   request({
-    url: apiOptions.serverUrl + '/articles' + path,
+    url: config.apiUrl + '/articles' + path,
     method: 'GET',
     json: {}
   }, function(err, response, body) {

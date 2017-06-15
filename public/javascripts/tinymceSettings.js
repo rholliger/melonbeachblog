@@ -1,10 +1,3 @@
-var ajaxSettings = {
-  url: 'http://139.59.146.243:3000/api',
-  // url: 'http://localhost:3000/api',
-  dataType: 'json',
-  contentType: 'application/json'  
-}
-
 tinymce.init({
   selector: 'textarea',
   height: 400,

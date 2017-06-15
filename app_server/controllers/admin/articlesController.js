@@ -1,10 +1,11 @@
 var request = require('request');
+var config = require('../../config');
 var utils = require('../../libs/utils');
 
 function getCategories() {
   return new Promise((resolve, reject) => {
     request({
-      url: utils.apiOptions.serverUrl + '/categories',
+      url: config.apiUrl + '/categories',
       method: 'GET',
       json: {}
     }, function(err, response, body) {
@@ -19,9 +20,8 @@ function getCategories() {
 
 // Show all articles from the database and present them in the article list view
 module.exports.showArticleList = function(req, res) {
-  console.log('cookies', req.cookies.bla);
   request({
-    url: utils.apiOptions.serverUrl + '/articles',
+    url: config.apiUrl + '/articles',
     method: 'GET',
     json: {}
   }, function(err, response, body) {
@@ -32,7 +32,7 @@ module.exports.showArticleList = function(req, res) {
     }
 
     res.render('admin/articles/list', { 
-      title: 'MelonBeach Blog Article asdasd',
+      title: 'MelonBeach Blog Article List',
       type: 'articles',
       articles: body
     });
@@ -56,7 +56,7 @@ module.exports.showArticleCreation = function(req, res) {
 // Show the article edit view
 module.exports.showArticleUpdate = function(req, res) {
   request({
-    url: utils.apiOptions.serverUrl + '/articles/' + req.params.articleId,
+    url: config.apiUrl + '/articles/' + req.params.articleId,
     method: 'GET',
     json: {}
   }, function(err, response, body) {
@@ -78,9 +78,9 @@ module.exports.showArticleUpdate = function(req, res) {
 
 // Show the deletion of an article
 module.exports.deleteArticle = function(req, res) {
-  console.log(req, res);
+  request = config.getAuthenticatedRequest();
   request({
-    url: utils.apiOptions.serverUrl + '/articles/' + req.params.articleId,
+    url: config.apiUrl + '/articles/' + req.params.articleId,
     method: 'DELETE',
   }, function(err, response, body) {
     res.redirect('/admin/articles/');

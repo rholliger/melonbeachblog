@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var config = require('../config');
 
 var frontController = require('../controllers/admin/frontController');
 var messageController = require('../controllers/admin/messageController');
@@ -31,6 +32,7 @@ function setNavigationData(req, res, next) {
 
 function checkAuthentication(req, res, next) {
   if (req.cookies.jwtoken) {
+    config.setAuthorizationHeader(req.cookies.jwtoken);
     next();
   } else {
     res.redirect('/admin/login/');

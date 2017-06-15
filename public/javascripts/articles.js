@@ -39,6 +39,7 @@ const ArticleForm = (function() {
 
   const init = function() {
     bindActions();
+    console.log('apiUrl', ajaxSettings.apiUrl);
   }
 
   const bindActions = function() {

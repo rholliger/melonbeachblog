@@ -1,6 +1,6 @@
 function request(path, method, data, successCallback, errorCallback) {
   $.ajax({
-    url: ajaxSettings.url + path,
+    url: ajaxSettings.apiUrl + path,
     method: method,
     contentType: ajaxSettings.contentType,
     dataType: ajaxSettings.dataType,
