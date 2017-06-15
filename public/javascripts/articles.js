@@ -50,8 +50,9 @@ const ArticleForm = (function() {
 
   const uploadTopElementMedia = function() {
     MediaUpload.upload($(this)[0].files, function(media) {
-      mediaElement.find('.imageContainer img').attr('src', '/uploads/'+media.fileName);
-      mediaElement.attr('id', media._id);
+      var mediaFile = media[0][0]
+      mediaElement.find('.imageContainer img').attr('src', '/uploads/'+mediaFile.fileName);
+      mediaElement.attr('id', mediaFile._id);
       mediaElement.show();
       mediaChooser.hide();
     });

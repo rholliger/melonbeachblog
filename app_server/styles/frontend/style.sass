@@ -3,11 +3,11 @@
     color: $green
 
     &:hover
-      color: $orange
+      opacity: 0.85
 
-    &:visited, &:focus
-      color: $green
-      text-decoration: none
+    // &:visited, &:focus
+    //   color: $green
+    //   text-decoration: none
 
   .button
     font-family: 'Oswald-Light'
@@ -21,6 +21,7 @@
     &:hover
       background-color: $green
       color: white
+      opacity: 1
 
   .wrapper
     #logo-container
@@ -77,23 +78,38 @@
             color: $lightGrey
 
           h1
-            padding-top: 2px
             color: $green
             letter-spacing: 0.5px
+            padding-top: 10px
+
+            // a
+            //   &:hover
+            //     opacity: 0.85
 
           h2
-            padding-top: 16px
             font-size: 16px
+            padding-top: 14px
 
           h3
-            padding-top: 14px
             font-size: 12px
+            padding-top: 14px
 
-        p, ul
+        p, ul, ol
           font-family: 'Palanquin-Light'
           font-weight: normal
           font-size: 16px
-          color: $darkerGrey
+          color: $darkerGrey 
+          margin: 10px 0 20px 0
+          line-height: 1.2em
+
+        ul
+          list-style-type: disc
+          margin-left: 36px
+
+        ol
+          list-style-type: decimal
+          margin-left: 26px
+          text-indent: 10px
 
         .button
           display: inline-block

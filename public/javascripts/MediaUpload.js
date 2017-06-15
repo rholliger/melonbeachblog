@@ -14,7 +14,7 @@ const MediaUpload = (function() {
     }
 
     $.ajax({
-      url: ajaxSettings.url + url,
+      url: ajaxSettings.apiUrl + url,
       data: formData,
       cache: false,
       contentType: false,

@@ -347,7 +347,6 @@ form {
               #admin .wrapper #sidebar nav ul li a span.glyphicon {
                 font-size: 28px; }
   #admin .wrapper #content {
-    background-color: #F0F0F0;
     padding: 14px;
     padding-left: 210px; }
     #admin .wrapper #content nav {
@@ -544,10 +543,7 @@ form {
 #blog a {
   color: #8AB57B; }
   #blog a:hover {
-    color: #F8B235; }
-  #blog a:visited, #blog a:focus {
-    color: #8AB57B;
-    text-decoration: none; }
+    opacity: 0.85; }
 
 #blog .button {
   font-family: 'Oswald-Light';
@@ -559,7 +555,8 @@ form {
   color: #8AB57B; }
   #blog .button:hover {
     background-color: #8AB57B;
-    color: white; }
+    color: white;
+    opacity: 1; }
 
 #blog .wrapper #logo-container {
   width: 300px;
@@ -601,22 +598,31 @@ form {
       #blog #articles-container article .text-container .title-container h2, #blog #articles-container article .text-container .title-container h3, #blog #articles-container article .text-container .title-container h4 {
         font-family: 'Oswald-Light';
         font-weight: normal;
-        color: #F0F0F0; }
+        color: #D4D4D4; }
       #blog #articles-container article .text-container .title-container h1 {
-        padding-top: 2px;
         color: #8AB57B;
-        letter-spacing: 0.5px; }
+        letter-spacing: 0.5px;
+        padding-top: 10px; }
       #blog #articles-container article .text-container .title-container h2 {
-        padding-top: 16px;
-        font-size: 16px; }
+        font-size: 16px;
+        padding-top: 14px; }
       #blog #articles-container article .text-container .title-container h3 {
-        padding-top: 14px;
-        font-size: 12px; }
-    #blog #articles-container article .text-container p, #blog #articles-container article .text-container ul {
+        font-size: 12px;
+        padding-top: 14px; }
+    #blog #articles-container article .text-container p, #blog #articles-container article .text-container ul, #blog #articles-container article .text-container ol {
       font-family: 'Palanquin-Light';
       font-weight: normal;
       font-size: 16px;
-      color: #A1A1A1; }
+      color: #777777;
+      margin: 10px 0 20px 0;
+      line-height: 1.2em; }
+    #blog #articles-container article .text-container ul {
+      list-style-type: disc;
+      margin-left: 36px; }
+    #blog #articles-container article .text-container ol {
+      list-style-type: decimal;
+      margin-left: 26px;
+      text-indent: 10px; }
     #blog #articles-container article .text-container .button {
       display: inline-block; }
 
