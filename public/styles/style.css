@@ -1,51 +1,30 @@
 @font-face {
-  font-family: 'Oswald-Regular';
-  font-weight: normal;
-  font-style: normal;
-  src: url("Oswald-Regular.eot");
-  src: url("Oswald-Regular.woff2") format("woff2") url("Oswald-Regular.woff") format("woff") url("Oswald-Regular.ttf") format("truetype") url("Oswald-Regular.svg#Oswald-Regular") format("svg") url("Oswald-Regular.eot?#iefix") format("embedded-opentype"); }
+  font-family: "Oswald-Regular";
+  src: url("/fonts/Oswald-Regular.eot?") format("eot"), url("/fonts/Oswald-Regular.woff2") format("woff2"), url("/fonts/Oswald-Regular.woff") format("woff"), url("/fonts/Oswald-Regular.ttf") format("truetype"), url("/fonts/Oswald-Regular.svg#Oswald-Regular") format("svg"); }
 
 @font-face {
-  font-family: 'Oswald-Light';
-  src: url("Oswald-Light.eot");
-  src: url("Oswald-Light.woff2") format("woff2") url("Oswald-Light.woff") format("woff") url("Oswald-Light.ttf") format("truetype") url("Oswald-Light.svg#Oswald-Light") format("svg") url("Oswald-Light.eot?#iefix") format("embedded-opentype");
-  font-weight: normal;
-  font-style: normal; }
+  font-family: "Oswald-Light";
+  src: url("/fonts/Oswald-Light.eot?") format("eot"), url("/fonts/Oswald-Light.woff2") format("woff2"), url("/fonts/Oswald-Light.woff") format("woff"), url("/fonts/Oswald-Light.ttf") format("truetype"), url("/fonts/Oswald-Light.svg#Oswald-Light") format("svg"); }
 
 @font-face {
-  font-family: 'Palanquin-Bold';
-  src: url("Palanquin-Bold.eot");
-  src: url("Palanquin-Bold.woff2") format("woff2") url("Palanquin-Bold.woff") format("woff") url("Palanquin-Bold.ttf") format("truetype") url("Palanquin-Bold.svg#Palanquin-Bold") format("svg") url("Palanquin-Bold.eot?#iefix") format("embedded-opentype");
-  font-weight: normal;
-  font-style: normal; }
+  font-family: "Palanquin-Bold";
+  src: url("/fonts/Palanquin-Bold.eot?") format("eot"), url("/fonts/Palanquin-Bold.woff2") format("woff2"), url("/fonts/Palanquin-Bold.woff") format("woff"), url("/fonts/Palanquin-Bold.ttf") format("truetype"), url("/fonts/Palanquin-Bold.svg#Palanquin-Bold") format("svg"); }
 
 @font-face {
-  font-family: 'Palanquin-SemiBold';
-  src: url("Palanquin-SemiBold.eot");
-  src: url("Palanquin-SemiBold.woff2") format("woff2") url("Palanquin-SemiBold.woff") format("woff") url("Palanquin-SemiBold.ttf") format("truetype") url("Palanquin-SemiBold.svg#Palanquin-SemiBold") format("svg") url("Palanquin-SemiBold.eot?#iefix") format("embedded-opentype");
-  font-weight: normal;
-  font-style: normal; }
+  font-family: "Palanquin-Semibold";
+  src: url("/fonts/Palanquin-Semibold.eot?") format("eot"), url("/fonts/Palanquin-Semibold.woff2") format("woff2"), url("/fonts/Palanquin-Semibold.woff") format("woff"), url("/fonts/Palanquin-Semibold.ttf") format("truetype"), url("/fonts/Palanquin-Semibold.svg#Palanquin-Semibold") format("svg"); }
 
 @font-face {
-  font-family: 'Palanquin-Regular';
-  src: url("Palanquin-Regular.eot");
-  src: url("Palanquin-Regular.woff2") format("woff2") url("Palanquin-Regular.woff") format("woff") url("Palanquin-Regular.ttf") format("truetype") url("Palanquin-Regular.svg#Palanquin-Regular") format("svg") url("Palanquin-Regular.eot?#iefix") format("embedded-opentype");
-  font-weight: normal;
-  font-style: normal; }
+  font-family: "Palanquin-Regular";
+  src: url("/fonts/Palanquin-Regular.eot?") format("eot"), url("/fonts/Palanquin-Regular.woff2") format("woff2"), url("/fonts/Palanquin-Regular.woff") format("woff"), url("/fonts/Palanquin-Regular.ttf") format("truetype"), url("/fonts/Palanquin-Regular.svg#Palanquin-Regular") format("svg"); }
 
 @font-face {
-  font-family: 'Palanquin-Light';
-  src: url("Palanquin-Light.eot");
-  src: url("Palanquin-Light.woff2") format("woff2") url("Palanquin-Light.woff") format("woff") url("Palanquin-Light.ttf") format("truetype") url("Palanquin-Light.svg#Palanquin-Light") format("svg") url("Palanquin-Light.eot?#iefix") format("embedded-opentype");
-  font-weight: normal;
-  font-style: normal; }
+  font-family: "Palanquin-Light";
+  src: url("/fonts/Palanquin-Light.eot?") format("eot"), url("/fonts/Palanquin-Light.woff2") format("woff2"), url("/fonts/Palanquin-Light.woff") format("woff"), url("/fonts/Palanquin-Light.ttf") format("truetype"), url("/fonts/Palanquin-Light.svg#Palanquin-Light") format("svg"); }
 
 @font-face {
-  font-family: 'Montserrat-Regular';
-  src: url("Montserrat-Regular.eot");
-  src: url("Montserrat-Regular.woff2") format("woff2") url("Montserrat-Regular.woff") format("woff") url("Montserrat-Regular.ttf") format("truetype") url("Montserrat-Regular.svg#Montserrat-Regular") format("svg") url("Montserrat-Regular.eot?#iefix") format("embedded-opentype");
-  font-weight: normal;
-  font-style: normal; }
+  font-family: "Montserrat-Regular";
+  src: url("/fonts/Montserrat-Regular.eot?") format("eot"), url("/fonts/Montserrat-Regular.woff2") format("woff2"), url("/fonts/Montserrat-Regular.woff") format("woff"), url("/fonts/Montserrat-Regular.ttf") format("truetype"), url("/fonts/Montserrat-Regular.svg#Montserrat-Regular") format("svg"); }
 
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
