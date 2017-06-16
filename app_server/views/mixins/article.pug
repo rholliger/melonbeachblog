@@ -16,7 +16,7 @@ mixin article(article, isFullArticle)
         else
           h1 
             a(href=article.category + '/' +article.slug)= article.title
-        h3 Written By #{article.author} in 
+        h3 Written By admin in 
           a(href=article.category)= article.category
       hr
       if isFullArticle
