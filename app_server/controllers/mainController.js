@@ -27,7 +27,7 @@ function requestArticles(path, callback) {
 module.exports.showArticles = function(req, res) {
   requestArticles('', function(body, err) {
       res.render('index', {
-        title: 'MelonBeach Blog Home Test',
+        title: 'MelonBeach Blog Home',
         articles: body
       });    
   });
